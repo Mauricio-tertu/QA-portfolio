@@ -6,9 +6,9 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![License](https://img.shields.io/badge/license-ISC-blue)
 
-> QA responsável por um sistema real em produção (HOLYSET). Testo, documento e reporto defeitos no Jira, com atenção ao detalhe e foco no que o utilizador realmente vai usar.
+> QA Tester júnior · testes manuais e funcionais · Braga, Portugal
 
-Procuro a causa dos problemas, não só o sintoma: testo do caso simples ao extremo, confirmo cada defeito por reprodução antes de o reportar e levo as dúvidas de regra de negócio ao Product Owner em vez de encher o backlog de ruído. A automação com Playwright é um complemento ao trabalho manual, não o ponto de partida.
+Sou o único QA do HOLYSET, uma aplicação em produção usada por igrejas. Este repositório reúne o que produzi lá: plano de teste, casos de teste, relatórios de cada sessão e defeitos reportados no Jira, com passos, evidências e reteste. Complemento esse trabalho com testes de API e automação em Playwright.
 
 **Estou à procura da minha primeira oportunidade como QA Tester em Portugal** (Lisboa, Porto ou remoto). Contacto: [LinkedIn](https://www.linkedin.com/in/maur%C3%ADcio-tert%C3%BAliano-3b916a20b/)
 
