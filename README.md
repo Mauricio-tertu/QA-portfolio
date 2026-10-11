@@ -1,6 +1,6 @@
 # Maurício Tertuliano — QA Tester (testes manuais e funcionais)
 
-![Playwright Tests](https://github.com/Mauricio-tertu/playwright-ts-portfolio/actions/workflows/playwright.yml/badge.svg)
+![Playwright Tests](https://github.com/Mauricio-tertu/QA-portfolio/actions/workflows/playwright.yml/badge.svg)
 ![Jira](https://img.shields.io/badge/Jira-0052CC?logo=jira&logoColor=white)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
@@ -94,8 +94,8 @@ npx playwright test --grep @regression  # regressão completa
 ## 🚀 Como correr os testes
 
 ```bash
-git clone https://github.com/Mauricio-tertu/playwright-ts-portfolio.git
-cd playwright-ts-portfolio
+git clone https://github.com/Mauricio-tertu/QA-portfolio.git
+cd QA-portfolio
 npm install
 npm test
 ```

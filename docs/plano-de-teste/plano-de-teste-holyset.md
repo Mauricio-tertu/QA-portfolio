@@ -76,7 +76,7 @@ Definir o escopo, os tipos de teste, a estratégia e os critérios de qualidade 
 ## 6. Ambiente e Ferramentas
 
 - **Ambiente:** segredinho.memremodelacoes.pt (dev), VPS sslip.io
-- **Automação:** Playwright + TypeScript, repositório `playwright-ts-portfolio`
+- **Automação:** Playwright + TypeScript, repositório `QA-portfolio`
 - **Gestão de bugs/tarefas:** Jira (SCRUM board, cloud `noreplyfintrackapp.atlassian.net`)
 - **Inspeção:** Chrome DevTools (Network, Console, Device Toolbar)
 - **Controle de versão:** GitHub, commits via conventional commits

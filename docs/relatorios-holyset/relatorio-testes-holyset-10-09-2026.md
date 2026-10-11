@@ -116,4 +116,4 @@ Sessão de testes exploratórios cobrindo quatro módulos do HolySet: **Escalas*
 
 ---
 
-*Relatório gerado como parte do processo de QA exploratório do projeto HolySet, com documentação mantida no repositório de portfólio [`playwright-ts-portfolio`](https://github.com/mauricio-tertu/playwright-ts-portfolio).*
+*Relatório gerado como parte do processo de QA exploratório do projeto HolySet, com documentação mantida no repositório de portfólio [`QA-portfolio`](https://github.com/Mauricio-tertu/QA-portfolio).*

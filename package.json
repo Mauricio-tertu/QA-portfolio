@@ -1,5 +1,5 @@
 {
-  "name": "playwright-ts-portfolio",
+  "name": "qa-portfolio",
   "version": "1.1.0",
   "description": "Portfólio de QA: testes automatizados com Playwright + TypeScript, incluindo suíte real de E2E, API e segurança para o HOLYSET (sistema em produção).",
   "main": "index.js",
@@ -14,7 +14,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mauricio-tertu/playwright-ts-portfolio"
+    "url": "https://github.com/Mauricio-tertu/QA-portfolio"
   },
   "devDependencies": {
     "@playwright/test": "^1.61.1",
