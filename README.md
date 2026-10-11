@@ -1,164 +1,147 @@
-# Playwright TS Portfolio
+# Maurício Tertuliano — QA Tester (testes manuais e funcionais)
 
 ![Playwright Tests](https://github.com/Mauricio-tertu/playwright-ts-portfolio/actions/workflows/playwright.yml/badge.svg)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Jira](https://img.shields.io/badge/Jira-0052CC?logo=jira&logoColor=white)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?logo=playwright&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![License](https://img.shields.io/badge/license-ISC-blue)
 
-> QA responsável pelo HOLYSET, em produção — atenção aos detalhes que fazem a diferença.
+> QA responsável por um sistema real em produção (HOLYSET). Testo, documento e reporto defeitos no Jira, com atenção ao detalhe e foco no que o utilizador realmente vai usar.
 
-Meu trabalho como QA não é só encontrar bugs, é entender o sistema profundamente o suficiente pra saber onde ele vai falhar antes que o usuário descubra. Este repositório documenta esse processo no HOLYSET: investigação de causa raiz, decisões sobre o que testar primeiro, e a automação que sustenta isso no longo prazo.
+Procuro a causa dos problemas, não só o sintoma: testo do caso simples ao extremo, confirmo cada defeito por reprodução antes de o reportar e levo as dúvidas de regra de negócio ao Product Owner em vez de encher o backlog de ruído. A automação com Playwright é um complemento ao trabalho manual, não o ponto de partida.
+
+**Estou à procura da minha primeira oportunidade como QA Tester em Portugal** (Lisboa, Porto ou remoto). Contacto: [LinkedIn](https://www.linkedin.com/in/maur%C3%ADcio-tert%C3%BAliano-3b916a20b/)
 
 ---
 
-## 🏢 Projeto HOLYSET
+## 🏢 Projeto HOLYSET: experiência real de QA
 
-Atuo como **QA único e responsável** por um sistema real em produção, usado por igrejas para gestão de cultos, escalas e repertório musical — [holy-set.vercel.app](https://holy-set.vercel.app) — trabalhando junto a um engenheiro sénior e um desenvolvedor.
+Sou o **único QA** do HOLYSET, um sistema em produção usado por igrejas para gerir cultos, escalas e repertório musical ([holy-set.vercel.app](https://holy-set.vercel.app)). Trabalho com o responsável do projeto e um programador, num fluxo de Scrum com board no Jira.
 
-### Números do trabalho até aqui
+### Números do trabalho até agora
 
 | Métrica | Valor |
 |---|---|
 | Sessões de teste documentadas | 15 |
-| Defeitos identificados e rastreados no Jira | 20+ (SCRUM-11 a SCRUM-47) |
+| Defeitos identificados e acompanhados no Jira | 20+ (SCRUM-11 a SCRUM-47) |
 | Módulos com CRUD validado de ponta a ponta | 4 (Escalas, Playlists, Biblioteca de Louvores, Cultos) |
-| Falha sistêmica isolada por investigação de causa raiz | 1 (RLS mal configurado) |
-| Cenários de teste automatizados (E2E + API) | 12 |
-| Casos de teste manuais formais do HOLYSET (login) | 2 executados, 3 planejados |
-| Metodologia de teste | Mobile-first (viewport ~338×689) |
+| Falha sistémica isolada por análise de causa raiz | 1 (RLS mal configurado) |
+| Casos de teste manuais formais do HOLYSET (login) | 2 executados, 3 planeados |
+| Abordagem | Mobile-first (viewport ~400 px), Chrome DevTools, rede 4G lenta |
 
-### Destaques do meu trabalho
+### Como trabalho
 
-- **Procuro a causa, não só o sintoma.** Vários erros 403 apareciam em telas diferentes. Em vez de abrir um ticket para cada um, testei áreas que não deviam falhar e percebi que a origem era a mesma: uma política de RLS mal configurada no Supabase. Um problema só, e a equipe pôde corrigir com precisão.
-- **Reporto o que é bug e pergunto o que não tenho certeza.** O sistema aceitava vários Diretores Musicais no mesmo culto e isso violava uma regra, então abri o bug. Quando a regra não estava clara, levei como pergunta ao Product Owner, para não encher o backlog de ruído.
-- **Vejo padrões, não bugs soltos.** Faltava validação em campos de Culto e Playlist. Testei do caso simples ao extremo (vazio, só espaços, datas em 2119) e levei como problema de estrutura.
-- **Segurança básica.** Testei XSS nos campos de nome (o texto foi tratado como texto, sem executar nada). Automatizei também um teste que confirma que a API bloqueia acesso sem login (401).
-- **Smoke depois do deploy.** No primeiro deploy para o Vercel (06/10) vi erros 404, 500 e 406 e os relacionei a um banco desalinhado, o que o Rafael confirmou. Não fiz os retestes antigos antes da correção, porque o resultado não valeria. Repeti no dia seguinte e passou.
-- **Testabilidade.** Percebi que a aplicação não tem `id`/`data-testid` nos elementos, o que atrapalha a automação e a acessibilidade, e levei como débito técnico.
+- **Procuro a causa, não só o sintoma.** Vários erros 403 apareciam em ecrãs diferentes. Em vez de abrir um ticket por ecrã, testei áreas que não deviam falhar e percebi que a origem era a mesma: uma política de RLS mal configurada no Supabase. A equipa corrigiu o problema na origem.
+- **Reporto o que é bug e pergunto o que não tenho certeza.** O sistema aceitava vários Diretores Musicais no mesmo culto, o que violava uma regra, por isso abri bug. Quando a regra não estava clara, levei-a ao Product Owner.
+- **Vejo padrões, não bugs soltos.** Faltava validação em campos de Culto e Playlist. Testei do caso simples ao extremo (vazio, só espaços, datas em 2119) e reportei como problema de estrutura.
+- **Segurança básica.** Testei XSS nos campos de nome (o texto foi tratado como texto, sem executar nada).
+- **Smoke test depois de cada deploy.** No primeiro deploy para o Vercel (06/10) vi erros 404, 500 e 406 e relacionei-os com uma base de dados desalinhada, o que o responsável do projeto confirmou. Não fiz os retestes antigos antes da correção, porque o resultado não seria válido. Repeti no dia seguinte e passou.
+- **Testabilidade.** Reparei que a aplicação não tem `id`/`data-testid` nos elementos, o que dificulta a automação e a acessibilidade, e levei o assunto como dívida técnica.
 
-### Evidência documentada
+### Evidências documentadas
 
-- 📋 [Plano de teste formal](docs/plano-de-teste/plano-de-teste-holyset.md) — escopo, tipos de teste, estratégia de automação e matriz de rastreabilidade
-- 📄 [Relatórios de sessão completos](docs/relatorios-holyset/) — 15 sessões, do achado ao ticket
-- ✅ [Casos de teste manuais do HOLYSET (login)](docs/casos-de-teste-holyset/casos-de-teste-login.md) — passos, resultado esperado e obtido, status
-- 🧪 [Casos de teste manuais do site de prática](docs/casos-de-teste-manuais.md)
-- 🔌 [Testes de API via Postman](docs/testes-api-postman.md)
+- 🐞 [Exemplos de bug reports](docs/exemplos-de-bug-reports.md): três defeitos reais, do achado ao reteste
+- 📄 [Relatórios de sessão completos](docs/relatorios-holyset/): 15 sessões de teste exploratório, do achado ao ticket
+- ✅ [Casos de teste manuais do HOLYSET (login)](docs/casos-de-teste-holyset/casos-de-teste-login.md): passos, resultado esperado e obtido, estado
+- 📋 [Plano de teste formal](docs/plano-de-teste/plano-de-teste-holyset.md): âmbito, tipos de teste, riscos e matriz de rastreabilidade
+- 🧪 [Casos de teste manuais do site de prática](docs/casos-de-teste-manuais.md) e [cenários em Gherkin](docs/casos-de-teste.md)
+- 🔌 [Testes de API com Postman](docs/testes-api-postman.md)
 
 ---
 
-## 🛠️ Stack
+## 🛠️ Competências
 
-- **Playwright** — framework de automação de testes E2E
-- **TypeScript** — tipagem estática para JavaScript
-- **Node.js (LTS)** — ambiente de execução
-- **GitHub Actions** — CI configurado para rodar os testes automaticamente
-- **Jira** — gestão de bugs e casos de teste em ambiente profissional real
+**Testes manuais e processo (foco principal)**
+- Testes exploratórios e funcionais, regressão e smoke test depois de deploys
+- Casos de teste formais, plano de teste, cenários em Gherkin
+- Reporte e triagem de defeitos no Jira (Scrum, board SCRUM)
+- Chrome DevTools: separador Rede, Consola, emulação mobile e limitação de rede
+- Testes de API com Postman (GET, POST, PUT, DELETE) e validação de dados com SQL
+- Git e GitHub
 
-## 🧪 Testes automatizados implementados
+**Automação (complemento)**
+- Playwright + TypeScript, Page Object Model, execução em Chromium, Firefox e WebKit
+- GitHub Actions (CI) a cada push
 
-**36 execuções por rodada local completa** (12 cenários × 3 navegadores: Chromium, Firefox e WebKit)
+---
 
-- **Login** (`tests/login.spec.ts`) — credenciais válidas, senha inválida, campos vazios
-- **Logout** (`tests/logout.spec.ts`) — fluxo completo de login → logout → validação de retorno
-- **API** (`tests/api.spec.ts`) — GET, POST, PUT, DELETE e rota inexistente (404)
-- **API real do HOLYSET** (`tests/holyset-supabase.spec.ts`) — validação da API REST do Supabase no ambiente de desenvolvimento (dev), incluindo teste de segurança negativo (bloqueio de acesso sem autenticação)
+## 🇬🇧 In English
 
-> No CI público (badge acima) essa última suíte aparece como *skipped*, não como falha: ela depende de credenciais que não são versionadas por segurança. Localmente, com o `.env` preenchido (ver `.env.example`), a suíte roda contra o ambiente dev do HOLYSET. Na última execução local (21/09/2026), o teste de bloqueio sem autenticação (401) passou; o teste de leitura com apikey válida retornou 401 inesperado e está em investigação.
+I'm a QA Tester based in Braga, Portugal, looking for my first role in software testing. I am the only QA on HOLYSET, a church ministry management app used in production: I run exploratory and regression tests, write test cases and a test plan, and report defects in Jira (20+ tickets, SCRUM-11 to SCRUM-47). I test mobile-first with Chrome DevTools and I use Postman and SQL for API and data checks. I also have a Playwright + TypeScript automation project with CI on GitHub Actions. I'm improving my English every day and I am open to working in English teams.
 
-## 🔥 Suítes de teste
+---
 
-Testes organizados por tags, permitindo execuções seletivas:
+## 🤖 Automação com Playwright
 
-- `@smoke` — caminhos vitais: validação rápida (~1 min)
-- `@regression` — suíte completa: garante que mudanças não quebraram funcionalidades existentes
+**36 execuções por ronda local completa** (12 cenários × 3 navegadores: Chromium, Firefox e WebKit)
+
+- **Login** (`tests/login.spec.ts`): credenciais válidas, palavra-passe inválida, campos vazios
+- **Logout** (`tests/logout.spec.ts`): fluxo completo de login → logout → validação do regresso
+- **API** (`tests/api.spec.ts`): GET, POST, PUT, DELETE e rota inexistente (404)
+- **API real do HOLYSET** (`tests/holyset-supabase.spec.ts`): validação da API REST do Supabase no ambiente de desenvolvimento, incluindo um teste de segurança negativo (bloqueio de acesso sem autenticação)
+
+> No CI público (badge acima) essa última suíte aparece como *skipped*, não como falha: depende de credenciais que não são versionadas por segurança. Localmente, com o `.env` preenchido (ver `.env.example`), corre contra o ambiente dev do HOLYSET. Na última execução local (21/09/2026), o teste de bloqueio sem autenticação (401) passou; o teste de leitura com apikey válida devolveu 401 inesperado e está em investigação.
+
+Os testes estão organizados por tags: `@smoke` (caminhos vitais, cerca de 1 minuto) e `@regression` (suíte completa).
 
 ```bash
 npx playwright test --grep @smoke       # só os vitais
 npx playwright test --grep @regression  # regressão completa
 ```
 
-## 🏗️ Arquitetura
+**Arquitetura:** Page Object Model (`pages/loginPage.ts`, `pages/securePage.ts`, `pages/loginPage.holyset.ts`), retries e timeouts configurados, e CI com GitHub Actions que guarda o relatório HTML como artefacto.
 
-- **Page Object Model (POM)** — `pages/loginPage.ts`, `pages/securePage.ts`, `pages/loginPage.holyset.ts` centralizam seletores e ações
-- **Retries e timeouts configurados** — mitigação de flakiness documentada
-- **CI com GitHub Actions** — suíte completa a cada push, com relatório HTML como artifact
-
-## 🚀 Como rodar os testes
-
-Clone o repositório e instale as dependências:
+## 🚀 Como correr os testes
 
 ```bash
 git clone https://github.com/Mauricio-tertu/playwright-ts-portfolio.git
 cd playwright-ts-portfolio
 npm install
-```
-
-(Opcional) Pra rodar a suíte real do Supabase, copie `.env.example` para `.env` e preencha com credenciais válidas. Sem isso, essa suíte é pulada automaticamente.
-
-Rode todos os testes:
-
-```bash
 npm test
 ```
 
-Rode apenas smoke ou regressão:
+(Opcional) Para correr a suíte real do Supabase, copie `.env.example` para `.env` e preencha com credenciais válidas. Sem isso, essa suíte é ignorada automaticamente.
 
 ```bash
-npm run test:smoke
-npm run test:regression
-```
-
-Rode apenas os testes de login:
-
-```bash
-npx playwright test login.spec.ts
-```
-
-Veja o relatório HTML após a execução:
-
-```bash
-npm run report
+npm run test:smoke       # só smoke
+npm run test:regression  # só regressão
+npm run report           # relatório HTML
 ```
 
 ## 📁 Estrutura do projeto
 
 ```
 ├── docs/
-│   ├── plano-de-teste/           # Plano de teste formal do HOLYSET
-│   ├── relatorios-holyset/       # Relatórios de sessão de teste exploratório
-│   ├── casos-de-teste-holyset/   # Casos de teste manuais do HOLYSET
-│   ├── casos-de-teste-manuais.md # Casos do site de prática
+│   ├── exemplos-de-bug-reports.md  # Bug reports reais do HOLYSET
+│   ├── plano-de-teste/             # Plano de teste formal do HOLYSET
+│   ├── relatorios-holyset/         # Relatórios de sessão de teste exploratório
+│   ├── casos-de-teste-holyset/     # Casos de teste manuais do HOLYSET
+│   ├── casos-de-teste-manuais.md   # Casos do site de prática
 │   └── testes-api-postman.md
-├── pages/                        # Page Object Model
-├── tests/                        # Specs Playwright
+├── pages/                          # Page Object Model
+├── tests/                          # Specs Playwright
 └── playwright.config.ts
 ```
 
-## 📌 Boas práticas aplicadas
-
-- Uso de `beforeEach` para eliminar repetição de código de setup
-- Page Object Model para isolar seletores de lógica de teste
-- Nomes de teste descritivos, explicando o comportamento esperado
-- Bugs confirmados por reprodução antes de formalizados — casos ambíguos são investigados, não reportados como ruído
-- Credenciais isoladas via `.env` (nunca versionado) — apenas `.env.example` sobe ao repositório
-- Testes que dependem de credenciais externas fazem `test.skip()` de forma explícita quando o ambiente não as tem, em vez de falhar o CI silenciosamente
-
 ## 🔜 Próximos passos
 
-- [x] Suite de testes de API para o HOLYSET (Supabase)
-- [x] Primeiros casos de teste manuais formais do HOLYSET (login: senha incorreta e campos vazios)
-- [ ] Executar os casos de teste de login restantes (TC-LOGIN-01, 04 e 05)
-- [ ] Retestes dos tickets em revisão e exploratório no módulo Ministérios (adiados por causa do banco desalinhado em 06/10)
+**Testes manuais (prioridade)**
+- [x] Plano de teste formal do HOLYSET
+- [x] Primeiros casos de teste manuais formais do HOLYSET (login: palavra-passe incorreta e campos vazios)
+- [ ] Executar os casos de login restantes (TC-LOGIN-01, 04 e 05)
+- [ ] Escrever casos de teste formais para os restantes módulos do HOLYSET (Escalas, Playlists, Biblioteca, Cultos)
+- [ ] Retestes dos tickets em revisão e exploratório no módulo Ministérios (adiados por causa da base de dados desalinhada em 06/10)
+- [ ] Formalizar em Gherkin os fluxos críticos já testados de forma exploratória
+- [ ] Certificação ISTQB Foundation
+
+**Automação (complemento)**
+- [x] Suíte de testes de API para o HOLYSET (Supabase)
 - [ ] Investigar o 401 inesperado no teste de leitura com apikey válida (ambiente dev)
-- [ ] Versionar o teste de regressão do SCRUM-15 (admin recebe 403 ao editar o próprio nome), hoje só na máquina local
-- [ ] Specs E2E de login/logout do HOLYSET (POM já criado em `pages/loginPage.holyset.ts`)
-- [ ] Smoke test e regressão específicos do HOLYSET (hoje as tags só cobrem o site de prática e a API)
-- [ ] Expandir testes de API para outros endpoints (Escalas, Playlists, Biblioteca de Louvores)
-- [ ] Auditoria de acessibilidade básica (axe-core)
-- [ ] Certificação ISTQB
+- [ ] Specs E2E de login/logout do HOLYSET (o POM já existe em `pages/loginPage.holyset.ts`)
+- [ ] Smoke e regressão específicos do HOLYSET (hoje as tags só cobrem o site de prática e a API)
+- [ ] Auditoria básica de acessibilidade (axe-core)
 
 ## 👤 Autor
 
-**Maurício Tertuliano**
-QA em transição de carreira (indústria → tecnologia) | Braga, Portugal
+**Maurício Tertuliano**, QA Tester em transição de carreira (indústria → tecnologia) | Braga, Portugal
 [LinkedIn](https://www.linkedin.com/in/maur%C3%ADcio-tert%C3%BAliano-3b916a20b/)
