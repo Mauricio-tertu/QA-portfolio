@@ -14,7 +14,7 @@ Sou o único QA do HOLYSET, uma aplicação em produção usada por igrejas. Est
 
 ---
 
-## 🏢 Projeto HOLYSET: experiência real de QA
+## 🏢 Projeto HOLYSET: 
 
 Sou o **único QA** do HOLYSET, um sistema em produção usado por igrejas para gerir cultos, escalas e repertório musical ([holy-set.vercel.app](https://holy-set.vercel.app)). Trabalho com o responsável do projeto e um programador, num fluxo de Scrum com board no Jira.
 
