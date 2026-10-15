@@ -43,6 +43,7 @@ Sou o **único QA** do HOLYSET, um sistema em produção usado por igrejas para 
 - 🐞 [Exemplos de bug reports](docs/exemplos-de-bug-reports.md): três defeitos reais, do achado ao reteste
 - 📄 [Relatórios de sessão completos](docs/relatorios-holyset/): 15 sessões de teste exploratório, do achado ao ticket
 - ✅ [Casos de teste manuais do HOLYSET (login)](docs/casos-de-teste-holyset/casos-de-teste-login.md): passos, resultado esperado e obtido, estado
+- 🥒 [Cenários Gherkin do HOLYSET](docs/casos-de-teste-holyset/gherkin/): 187 cenários BDD em 46 ficheiros `.feature`, cobrindo todas as telas após a atualização de outubro
 - 📋 [Plano de teste formal](docs/plano-de-teste/plano-de-teste-holyset.md): âmbito, tipos de teste, riscos e matriz de rastreabilidade
 - 🧪 [Casos de teste manuais do site de prática](docs/casos-de-teste-manuais.md) e [cenários em Gherkin](docs/casos-de-teste.md)
 - 🔌 [Testes de API com Postman](docs/testes-api-postman.md)
@@ -115,7 +116,7 @@ npm run report           # relatório HTML
 │   ├── exemplos-de-bug-reports.md  # Bug reports reais do HOLYSET
 │   ├── plano-de-teste/             # Plano de teste formal do HOLYSET
 │   ├── relatorios-holyset/         # Relatórios de sessão de teste exploratório
-│   ├── casos-de-teste-holyset/     # Casos de teste manuais do HOLYSET
+│   ├── casos-de-teste-holyset/     # Casos de teste manuais e cenários Gherkin do HOLYSET
 │   ├── casos-de-teste-manuais.md   # Casos do site de prática
 │   └── testes-api-postman.md
 ├── pages/                          # Page Object Model
@@ -131,7 +132,7 @@ npm run report           # relatório HTML
 - [ ] Executar os casos de login restantes (TC-LOGIN-01, 04 e 05)
 - [ ] Escrever casos de teste formais para os restantes módulos do HOLYSET (Escalas, Playlists, Biblioteca, Cultos)
 - [ ] Retestes dos tickets em revisão e exploratório no módulo Ministérios (adiados por causa da base de dados desalinhada em 06/10)
-- [ ] Formalizar em Gherkin os fluxos críticos já testados de forma exploratória
+- [x] Formalizar em Gherkin todas as telas do HOLYSET (46 features, 187 cenários)
 - [ ] Certificação ISTQB Foundation
 
 **Automação (complemento)**

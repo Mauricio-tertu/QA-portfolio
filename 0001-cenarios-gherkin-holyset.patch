@@ -1,0 +1,1863 @@
+From f83615c5fe4627f49f9b804b8ee61eedfcb1f4bf Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Maur=C3=ADcio=20Tertuliano?= <mauriciosilva.pt@gmail.com>
+Date: Thu, 15 Oct 2026 17:39:11 +0100
+Subject: [PATCH] =?UTF-8?q?docs:=20adiciona=20cen=C3=A1rios=20Gherkin=20de?=
+ =?UTF-8?q?=20todas=20as=20telas=20do=20HOLYSET?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+46 ficheiros .feature (187 cenários, CT-001 a CT-187) escritos após a
+atualização da interface de outubro, com índice e legenda de tags.
+Nomes de pessoas, ministérios e cultos anonimizados.
+---
+ README.md                                     |  5 +-
+ docs/casos-de-teste-holyset/gherkin/README.md | 79 +++++++++++++++++++
+ .../gherkin/T01_login.feature                 | 51 ++++++++++++
+ .../gherkin/T02_esqueci-senha.feature         | 34 ++++++++
+ .../gherkin/T03_criar-conta.feature           | 46 +++++++++++
+ .../gherkin/T04_inicio.feature                | 46 +++++++++++
+ .../gherkin/T05_notificacoes.feature          | 34 ++++++++
+ .../gherkin/T06_agenda-calendario.feature     | 43 ++++++++++
+ .../gherkin/T07_modo-escuro.feature           | 30 +++++++
+ .../gherkin/T08_perfil.feature                | 41 ++++++++++
+ .../gherkin/T09_perfil-editar-dados.feature   | 37 +++++++++
+ .../gherkin/T10_avatar-escolher.feature       | 27 +++++++
+ .../gherkin/T11_avatar-montar.feature         | 53 +++++++++++++
+ .../gherkin/T12_perfil-notificacoes.feature   | 33 ++++++++
+ .../gherkin/T13_perfil-aparencia.feature      | 17 ++++
+ .../gherkin/T14_perfil-seguranca.feature      | 16 ++++
+ .../gherkin/T15_perfil-preferencias.feature   | 33 ++++++++
+ .../gherkin/T16_escalas-minha-agenda.feature  | 21 +++++
+ .../T17_escalas-por-ministerio.feature        | 37 +++++++++
+ .../gherkin/T18_escala-detalhe.feature        | 30 +++++++
+ .../gherkin/T19_playlists-lista.feature       | 24 ++++++
+ .../gherkin/T20_playlist-detalhe.feature      | 34 ++++++++
+ .../gherkin/T21_biblioteca-musicas.feature    | 29 +++++++
+ .../gherkin/T22_biblioteca-busca.feature      | 31 ++++++++
+ .../gherkin/T23_biblioteca-filtro.feature     | 43 ++++++++++
+ .../gherkin/T24_biblioteca-pastas.feature     | 13 +++
+ .../gherkin/T25_pasta-detalhe.feature         | 20 +++++
+ .../gherkin/T26_ministerios-lista.feature     | 36 +++++++++
+ .../gherkin/T27_entrar-com-codigo.feature     | 42 ++++++++++
+ .../gherkin/T28_ministerios-equipe.feature    | 29 +++++++
+ .../gherkin/T29_diaconia-inicio.feature       | 24 ++++++
+ .../gherkin/T30_diaconia-visitantes.feature   | 15 ++++
+ .../T31_diaconia-checklist-cultos.feature     | 21 +++++
+ .../T32_diaconia-checklist-detalhe.feature    | 36 +++++++++
+ .../T33_diaconia-checklist-tarefa.feature     | 24 ++++++
+ .../gherkin/T34_diaconia-escalas.feature      | 21 +++++
+ .../gherkin/T35_som-escalas-inicio.feature    | 20 +++++
+ .../gherkin/T36_som-checklists.feature        | 15 ++++
+ .../gherkin/T37_projecao-checklists.feature   | 15 ++++
+ .../T38_projecao-novo-checklist.feature       | 24 ++++++
+ .../gherkin/T39_projecao-escalas.feature      | 14 ++++
+ .../gherkin/T40_projecao-novo-culto.feature   | 25 ++++++
+ .../T41_projecao-ministerios-lider.feature    | 15 ++++
+ .../gherkin/T42_projecao-equipe-lider.feature | 27 +++++++
+ .../gherkin/T43_projecao-equipe-menu.feature  | 34 ++++++++
+ .../gherkin/T44_projecao-pedidos.feature      | 26 ++++++
+ .../T45_projecao-adicionar-pessoas.feature    | 52 ++++++++++++
+ .../T46_iluminacao-inicio-equipe.feature      | 21 +++++
+ 48 files changed, 1441 insertions(+), 2 deletions(-)
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/README.md
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T01_login.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T02_esqueci-senha.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T03_criar-conta.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T04_inicio.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T05_notificacoes.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T06_agenda-calendario.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T07_modo-escuro.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T08_perfil.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T09_perfil-editar-dados.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T10_avatar-escolher.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T11_avatar-montar.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T12_perfil-notificacoes.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T13_perfil-aparencia.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T14_perfil-seguranca.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T15_perfil-preferencias.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T16_escalas-minha-agenda.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T17_escalas-por-ministerio.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T18_escala-detalhe.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T19_playlists-lista.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T20_playlist-detalhe.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T21_biblioteca-musicas.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T22_biblioteca-busca.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T23_biblioteca-filtro.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T24_biblioteca-pastas.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T25_pasta-detalhe.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T26_ministerios-lista.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T27_entrar-com-codigo.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T28_ministerios-equipe.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T29_diaconia-inicio.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T30_diaconia-visitantes.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T31_diaconia-checklist-cultos.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T32_diaconia-checklist-detalhe.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T33_diaconia-checklist-tarefa.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T34_diaconia-escalas.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T35_som-escalas-inicio.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T36_som-checklists.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T37_projecao-checklists.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T38_projecao-novo-checklist.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T39_projecao-escalas.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T40_projecao-novo-culto.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T41_projecao-ministerios-lider.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T42_projecao-equipe-lider.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T43_projecao-equipe-menu.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T44_projecao-pedidos.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T45_projecao-adicionar-pessoas.feature
+ create mode 100644 docs/casos-de-teste-holyset/gherkin/T46_iluminacao-inicio-equipe.feature
+
+diff --git a/README.md b/README.md
+index ad28c81..014dff0 100644
+--- a/README.md
++++ b/README.md
+@@ -43,6 +43,7 @@ Sou o **único QA** do HOLYSET, um sistema em produção usado por igrejas para
+ - 🐞 [Exemplos de bug reports](docs/exemplos-de-bug-reports.md): três defeitos reais, do achado ao reteste
+ - 📄 [Relatórios de sessão completos](docs/relatorios-holyset/): 15 sessões de teste exploratório, do achado ao ticket
+ - ✅ [Casos de teste manuais do HOLYSET (login)](docs/casos-de-teste-holyset/casos-de-teste-login.md): passos, resultado esperado e obtido, estado
++- 🥒 [Cenários Gherkin do HOLYSET](docs/casos-de-teste-holyset/gherkin/): 187 cenários BDD em 46 ficheiros `.feature`, cobrindo todas as telas após a atualização de outubro
+ - 📋 [Plano de teste formal](docs/plano-de-teste/plano-de-teste-holyset.md): âmbito, tipos de teste, riscos e matriz de rastreabilidade
+ - 🧪 [Casos de teste manuais do site de prática](docs/casos-de-teste-manuais.md) e [cenários em Gherkin](docs/casos-de-teste.md)
+ - 🔌 [Testes de API com Postman](docs/testes-api-postman.md)
+@@ -115,7 +116,7 @@ npm run report           # relatório HTML
+ │   ├── exemplos-de-bug-reports.md  # Bug reports reais do HOLYSET
+ │   ├── plano-de-teste/             # Plano de teste formal do HOLYSET
+ │   ├── relatorios-holyset/         # Relatórios de sessão de teste exploratório
+-│   ├── casos-de-teste-holyset/     # Casos de teste manuais do HOLYSET
++│   ├── casos-de-teste-holyset/     # Casos de teste manuais e cenários Gherkin do HOLYSET
+ │   ├── casos-de-teste-manuais.md   # Casos do site de prática
+ │   └── testes-api-postman.md
+ ├── pages/                          # Page Object Model
+@@ -131,7 +132,7 @@ npm run report           # relatório HTML
+ - [ ] Executar os casos de login restantes (TC-LOGIN-01, 04 e 05)
+ - [ ] Escrever casos de teste formais para os restantes módulos do HOLYSET (Escalas, Playlists, Biblioteca, Cultos)
+ - [ ] Retestes dos tickets em revisão e exploratório no módulo Ministérios (adiados por causa da base de dados desalinhada em 06/10)
+-- [ ] Formalizar em Gherkin os fluxos críticos já testados de forma exploratória
++- [x] Formalizar em Gherkin todas as telas do HOLYSET (46 features, 187 cenários)
+ - [ ] Certificação ISTQB Foundation
+ 
+ **Automação (complemento)**
+diff --git a/docs/casos-de-teste-holyset/gherkin/README.md b/docs/casos-de-teste-holyset/gherkin/README.md
+new file mode 100644
+index 0000000..e763594
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/README.md
+@@ -0,0 +1,79 @@
++# Cenários Gherkin do HOLYSET
++
++Cenários BDD de **todas as telas** do HOLYSET, escritos depois da grande atualização da interface (outubro de 2026).
++
++- **46 ficheiros `.feature`**, um por tela, com **187 cenários** (`@CT-001` a `@CT-187`)
++- Escritos em português (`# language: pt`) e validados com o parser oficial [`@cucumber/gherkin`](https://github.com/cucumber/gherkin)
++- Base: sessão exploratória de 15/10/2026 em viewport mobile, com perfis de membro e de líder
++- Os nomes de pessoas, ministérios e cultos foram anonimizados
++
++## Tags
++
++| Tag | Uso |
++|---|---|
++| `@smoke` | Caminho feliz da funcionalidade, candidato à automação com Playwright |
++| `@negativo` | Validações e entradas inválidas |
++| `@permissao` | Diferenças entre membro e líder |
++| `@destrutivo` | Ações irreversíveis (executar só em ambiente de teste) |
++| `@acessibilidade`, `@visual`, `@ux` | Leitor de ecrã, contraste e layout |
++| `@seguranca`, `@privacidade` | Exposição de dados, convites e recuperação de palavra-passe |
++| `@regressao`, `@dados`, `@navegacao` | Consistência de dados e de navegação entre telas |
++
++## Índice
++
++| # | Tela | Cenários | IDs |
++|---|---|---|---|
++| **Autenticação** | | | |
++| T01 | [Login](T01_login.feature) | 5 | CT-001 a CT-005 |
++| T02 | [Esqueci a senha](T02_esqueci-senha.feature) | 5 | CT-006 a CT-010 |
++| T03 | [Criar conta](T03_criar-conta.feature) | 5 | CT-011 a CT-015 |
++| **Início e Agenda** | | | |
++| T04 | [Início (Louvor)](T04_inicio.feature) | 6 | CT-016 a CT-021 |
++| T05 | [Central de notificações](T05_notificacoes.feature) | 5 | CT-022 a CT-026 |
++| T06 | [Calendário (Ver tudo)](T06_agenda-calendario.feature) | 6 | CT-027 a CT-032 |
++| T07 | [Tema escuro](T07_modo-escuro.feature) | 3 | CT-033 a CT-035 |
++| **Perfil e Configurações** | | | |
++| T08 | [Perfil](T08_perfil.feature) | 5 | CT-036 a CT-040 |
++| T09 | [Editar dados](T09_perfil-editar-dados.feature) | 4 | CT-041 a CT-044 |
++| T10 | [Escolher avatar](T10_avatar-escolher.feature) | 4 | CT-045 a CT-048 |
++| T11 | [Montar avatar](T11_avatar-montar.feature) | 7 | CT-049 a CT-055 |
++| T12 | [Preferências de notificação](T12_perfil-notificacoes.feature) | 5 | CT-056 a CT-060 |
++| T13 | [Aparência](T13_perfil-aparencia.feature) | 2 | CT-061 a CT-062 |
++| T14 | [Segurança](T14_perfil-seguranca.feature) | 2 | CT-063 a CT-064 |
++| T15 | [Preferências (funções e ministério padrão)](T15_perfil-preferencias.feature) | 3 | CT-065 a CT-067 |
++| **Escalas** | | | |
++| T16 | [Escalas — Minha agenda](T16_escalas-minha-agenda.feature) | 3 | CT-068 a CT-070 |
++| T17 | [Escalas — Por ministério](T17_escalas-por-ministerio.feature) | 6 | CT-071 a CT-076 |
++| T18 | [Detalhe da escala](T18_escala-detalhe.feature) | 5 | CT-077 a CT-081 |
++| **Playlists e Biblioteca** | | | |
++| T19 | [Playlists](T19_playlists-lista.feature) | 4 | CT-082 a CT-085 |
++| T20 | [Detalhe da playlist (Ordem do culto)](T20_playlist-detalhe.feature) | 5 | CT-086 a CT-090 |
++| T21 | [Biblioteca — Músicas](T21_biblioteca-musicas.feature) | 5 | CT-091 a CT-095 |
++| T22 | [Biblioteca — Busca](T22_biblioteca-busca.feature) | 5 | CT-096 a CT-100 |
++| T23 | [Biblioteca — Filtro por categoria](T23_biblioteca-filtro.feature) | 6 | CT-101 a CT-106 |
++| T24 | [Biblioteca — Pastas](T24_biblioteca-pastas.feature) | 2 | CT-107 a CT-108 |
++| T25 | [Detalhe da pasta](T25_pasta-detalhe.feature) | 3 | CT-109 a CT-111 |
++| **Ministérios e Equipe (visão de membro)** | | | |
++| T26 | [Ministérios](T26_ministerios-lista.feature) | 4 | CT-112 a CT-115 |
++| T27 | [Entrar com código](T27_entrar-com-codigo.feature) | 6 | CT-116 a CT-121 |
++| T28 | [Equipe (membro — Louvor)](T28_ministerios-equipe.feature) | 5 | CT-122 a CT-126 |
++| **Diaconia** | | | |
++| T29 | [Início (Diaconia)](T29_diaconia-inicio.feature) | 3 | CT-127 a CT-129 |
++| T30 | [Checklist — Visitantes](T30_diaconia-visitantes.feature) | 2 | CT-130 a CT-131 |
++| T31 | [Checklist — Cultos](T31_diaconia-checklist-cultos.feature) | 3 | CT-132 a CT-134 |
++| T32 | [Checklist do culto](T32_diaconia-checklist-detalhe.feature) | 5 | CT-135 a CT-139 |
++| T33 | [Checklist — Tarefa e filtro](T33_diaconia-checklist-tarefa.feature) | 4 | CT-140 a CT-143 |
++| T34 | [Escalas da Diaconia](T34_diaconia-escalas.feature) | 3 | CT-144 a CT-146 |
++| **Som, Iluminação e Projeção (visão de líder)** | | | |
++| T35 | [Som — Escalas e Início](T35_som-escalas-inicio.feature) | 3 | CT-147 a CT-149 |
++| T36 | [Som — Checklists](T36_som-checklists.feature) | 2 | CT-150 a CT-151 |
++| T37 | [Projeção — Checklists (líder)](T37_projecao-checklists.feature) | 2 | CT-152 a CT-153 |
++| T38 | [Novo checklist](T38_projecao-novo-checklist.feature) | 3 | CT-154 a CT-156 |
++| T39 | [Projeção — Escalas (líder, vazio)](T39_projecao-escalas.feature) | 2 | CT-157 a CT-158 |
++| T40 | [Agendar novo culto](T40_projecao-novo-culto.feature) | 3 | CT-159 a CT-161 |
++| T41 | [Ministérios (líder com pedido)](T41_projecao-ministerios-lider.feature) | 2 | CT-162 a CT-163 |
++| T42 | [Projeção — Equipe (líder)](T42_projecao-equipe-lider.feature) | 4 | CT-164 a CT-167 |
++| T43 | [Menu do integrante](T43_projecao-equipe-menu.feature) | 5 | CT-168 a CT-172 |
++| T44 | [Pedidos de entrada](T44_projecao-pedidos.feature) | 4 | CT-173 a CT-176 |
++| T45 | [Adicionar pessoas](T45_projecao-adicionar-pessoas.feature) | 8 | CT-177 a CT-184 |
++| T46 | [Iluminação — Início e Equipe](T46_iluminacao-inicio-equipe.feature) | 3 | CT-185 a CT-187 |
+diff --git a/docs/casos-de-teste-holyset/gherkin/T01_login.feature b/docs/casos-de-teste-holyset/gherkin/T01_login.feature
+new file mode 100644
+index 0000000..52d3138
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T01_login.feature
+@@ -0,0 +1,51 @@
++# language: pt
++@autenticacao @login
++Funcionalidade: Login no HolySet
++  Como integrante de um ministério
++  Quero entrar com minha conta
++  Para ver minhas escalas, tarefas e repertório
++
++  Contexto:
++    Dado que estou na tela "Que bom te ver de novo"
++
++  @CT-001 @smoke
++  Cenário: Login com credenciais válidas
++    Quando preencho "E-mail" com um e-mail cadastrado
++    E preencho "Senha" com a senha correta
++    E toco em "Entrar"
++    Então sou levado para a tela "Início"
++    E vejo a saudação "Olá, <primeiro nome>"
++
++  @CT-002 @negativo
++  Esquema do Cenário: Login com dados inválidos
++    Quando preencho "E-mail" com "<email>"
++    E preencho "Senha" com "<senha>"
++    E toco em "Entrar"
++    Então permaneço na tela de login
++    E vejo a mensagem de erro "<mensagem>"
++
++    Exemplos:
++      | email                | senha        | mensagem                       |
++      | naoexiste@teste.com  | qualquer123  | credenciais inválidas          |
++      | usuario@teste.com    | senhaErrada  | credenciais inválidas          |
++      | email-invalido       | 123456       | e-mail em formato inválido     |
++      |                      |              | campos obrigatórios            |
++
++  @CT-003
++  Cenário: Mostrar e ocultar a senha
++    Dado que digitei uma senha
++    Quando toco no ícone de olho do campo "Senha"
++    Então a senha fica visível em texto
++    Quando toco novamente no ícone
++    Então a senha volta a ficar mascarada
++
++  @CT-004
++  Cenário: Entrar com Google
++    Quando toco em "Continuar com Google"
++    Então o fluxo OAuth do Google é aberto
++    E após autorizar sou levado para a tela "Início"
++
++  @CT-005
++  Cenário: Navegar para criação de conta
++    Quando toco em "Criar conta"
++    Então vejo a tela "Crie sua conta"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T02_esqueci-senha.feature b/docs/casos-de-teste-holyset/gherkin/T02_esqueci-senha.feature
+new file mode 100644
+index 0000000..00647d7
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T02_esqueci-senha.feature
+@@ -0,0 +1,34 @@
++# language: pt
++@autenticacao @recuperacao-senha
++Funcionalidade: Recuperação de senha pelo login
++
++  @CT-006
++  Cenário: Solicitar link com e-mail preenchido
++    Dado que preenchi o campo "E-mail" com um e-mail válido
++    Quando toco em "Esqueci a senha"
++    Então o botão mostra o estado "Enviando…"
++    E vejo a mensagem "Se este e-mail tiver conta, enviamos um link para você criar uma nova senha."
++
++  @CT-007 @seguranca
++  Cenário: Mensagem não revela se o e-mail existe
++    Dado que preenchi o campo "E-mail" com um e-mail não cadastrado
++    Quando toco em "Esqueci a senha"
++    Então vejo a mesma mensagem genérica exibida para e-mails cadastrados
++
++  @CT-008 @negativo
++  Cenário: Solicitar link com e-mail vazio
++    Dado que o campo "E-mail" está vazio
++    Quando toco em "Esqueci a senha"
++    Então vejo um aviso pedindo para informar o e-mail
++    E nenhum e-mail é enviado
++
++  @CT-009 @ux
++  Cenário: Confirmação antes de enviar o e-mail de redefinição
++    Dado que preenchi o campo "E-mail"
++    Quando toco em "Esqueci a senha"
++    Então devo ver uma etapa de confirmação antes do envio
++
++  @CT-010 @seguranca
++  Cenário: Limite de solicitações (rate limit)
++    Quando toco em "Esqueci a senha" 5 vezes seguidas
++    Então o sistema limita novos envios por um período
+diff --git a/docs/casos-de-teste-holyset/gherkin/T03_criar-conta.feature b/docs/casos-de-teste-holyset/gherkin/T03_criar-conta.feature
+new file mode 100644
+index 0000000..ffd74a8
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T03_criar-conta.feature
+@@ -0,0 +1,46 @@
++# language: pt
++@autenticacao @cadastro
++Funcionalidade: Criação de conta
++
++  Contexto:
++    Dado que estou na tela "Crie sua conta"
++
++  @CT-011 @smoke
++  Cenário: Cadastro com dados válidos
++    Quando preencho "Seu nome" com "Maria"
++    E preencho "E-mail" com um e-mail ainda não cadastrado
++    E preencho "Crie uma senha" com "abc123"
++    E toco em "Criar conta"
++    Então minha conta é criada
++    E sou orientado a entrar em um ministério
++
++  @CT-012
++  Cenário: Indicador de requisito de senha
++    Quando digito "abc12" no campo de senha
++    Então o indicador "Pelo menos 6 caracteres" fica pendente
++    Quando digito "abc123"
++    Então o indicador "Pelo menos 6 caracteres" fica atendido
++
++  @CT-013 @negativo
++  Esquema do Cenário: Validações do formulário
++    Quando preencho nome "<nome>", e-mail "<email>" e senha "<senha>"
++    E toco em "Criar conta"
++    Então vejo o erro "<erro>"
++
++    Exemplos:
++      | nome  | email               | senha  | erro                         |
++      |       | novo@teste.com      | abc123 | nome obrigatório             |
++      | Maria | email-invalido      | abc123 | e-mail inválido              |
++      | Maria | novo@teste.com      | abc    | senha com menos de 6 caract. |
++      | Maria | (e-mail já em uso)  | abc123 | e-mail já cadastrado         |
++
++  @CT-014
++  Cenário: Voltar para o login
++    Quando toco em "Entrar" no rodapé
++    Então volto para a tela de login
++
++  @CT-015 @ux
++  Cenário: E-mail preenchido é reaproveitado
++    Dado que digitei um e-mail na tela de login
++    Quando abro "Criar conta"
++    Então o campo "E-mail" já vem preenchido com o mesmo valor
+diff --git a/docs/casos-de-teste-holyset/gherkin/T04_inicio.feature b/docs/casos-de-teste-holyset/gherkin/T04_inicio.feature
+new file mode 100644
+index 0000000..d02da57
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T04_inicio.feature
+@@ -0,0 +1,46 @@
++# language: pt
++@inicio
++Funcionalidade: Tela inicial
++
++  Contexto:
++    Dado que estou logado e o ministério em uso é "Louvor"
++    E estou na tela "Início"
++
++  @CT-016 @smoke
++  Cenário: Exibir saudação e data atual
++    Então vejo "Olá, <primeiro nome>"
++    E vejo a data de hoje por extenso, ex.: "Quinta, 15 de outubro"
++    E o dia de hoje aparece destacado como "Hoje" na faixa da semana
++
++  @CT-017
++  Cenário: Sem escalas futuras
++    Dado que não estou escalado em nenhum culto futuro
++    Então vejo o card "Nenhuma escala à frente"
++
++  @CT-018
++  Cenário: Próxima escala do usuário
++    Dado que estou escalado em um culto futuro
++    Então o card mostra a data, o nome do culto e minha função
++
++  @CT-019
++  Esquema do Cenário: Atalhos do ministério em uso
++    Quando toco em "<atalho>"
++    Então sou levado para "<destino>"
++
++    Exemplos:
++      | atalho            | destino                                  |
++      | Escalas da equipe | Escalas > Por ministério                 |
++      | Equipe            | Ministérios > Equipe                     |
++      | Meu perfil        | Perfil                                   |
++      | Trocar            | Ministérios (lista para trocar)          |
++      | Ver tudo          | Calendário do mês                        |
++
++  @CT-020
++  Cenário: Tocar em um dia da semana abre o calendário
++    Quando toco no dia "Sáb 17"
++    Então o calendário abre com o dia 17 selecionado
++
++  @CT-021
++  Cenário: Puxar para atualizar
++    Quando arrasto a tela para baixo no topo
++    Então vejo "Puxe para atualizar" e os dados são recarregados
+diff --git a/docs/casos-de-teste-holyset/gherkin/T05_notificacoes.feature b/docs/casos-de-teste-holyset/gherkin/T05_notificacoes.feature
+new file mode 100644
+index 0000000..b382488
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T05_notificacoes.feature
+@@ -0,0 +1,34 @@
++# language: pt
++@notificacoes
++Funcionalidade: Central de notificações
++
++  Contexto:
++    Dado que estou na tela "Início"
++    Quando toco no ícone de sino
++
++  @CT-022
++  Cenário: Listar notificações
++    Então vejo o painel "Notificações"
++    E cada item mostra título, descrição, ministério e tempo relativo
++
++  @CT-023
++  Cenário: Ordenação cronológica
++    Então as notificações estão em ordem da mais recente para a mais antiga
++
++  @CT-024 @destrutivo
++  Cenário: Limpar histórico
++    Quando toco no ícone de lixeira
++    Então devo ver uma confirmação antes de apagar
++    Quando confirmo
++    Então a lista fica vazia com uma mensagem de estado vazio
++
++  @CT-025
++  Cenário: Fechar painel
++    Quando toco em "Fechar"
++    Então o painel é fechado
++
++  @CT-026
++  Cenário: Rolagem interna
++    Dado que existem mais notificações do que cabem no painel
++    Quando rolo dentro do painel
++    Então a página de fundo não rola
+diff --git a/docs/casos-de-teste-holyset/gherkin/T06_agenda-calendario.feature b/docs/casos-de-teste-holyset/gherkin/T06_agenda-calendario.feature
+new file mode 100644
+index 0000000..e0d07f9
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T06_agenda-calendario.feature
+@@ -0,0 +1,43 @@
++# language: pt
++@agenda @calendario
++Funcionalidade: Calendário da agenda
++
++  Contexto:
++    Dado que estou na tela "Início"
++    Quando toco em "Ver tudo"
++
++  @CT-027
++  Cenário: Abrir no mês atual com hoje selecionado
++    Então vejo "Outubro 2026"
++    E o dia 15 está destacado como hoje
++    E o rodapé mostra "Quinta-feira, 15 de outubro" com a etiqueta "hoje"
++
++  @CT-028
++  Cenário: Selecionar outro dia
++    Quando toco no dia 17
++    Então o rodapé mostra "Sábado, 17 de outubro" com a etiqueta "em 2 dias"
++    E o dia 15 continua marcado com contorno de "hoje"
++
++  @CT-029
++  Cenário: Navegar entre meses
++    Quando toco em "Próximo mês"
++    Então vejo "Novembro 2026"
++    Quando toco em "Mês anterior"
++    Então volto para "Outubro 2026"
++
++  @CT-030
++  Cenário: Dia com escala
++    Dado que estou escalado no dia 24
++    Então o dia 24 tem um indicador visual
++    Quando toco no dia 24
++    Então o rodapé lista o culto e minha função
++
++  @CT-031 @acessibilidade
++  Cenário: Rótulos acessíveis dos dias
++    Então cada dia tem aria-label no formato "17 de outubro"
++    E o dia atual é anunciado como "Hoje, 15 de outubro"
++
++  @CT-032
++  Cenário: Fechar calendário
++    Quando toco em "Fechar calendário"
++    Então volto para a tela "Início"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T07_modo-escuro.feature b/docs/casos-de-teste-holyset/gherkin/T07_modo-escuro.feature
+new file mode 100644
+index 0000000..f83dfb9
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T07_modo-escuro.feature
+@@ -0,0 +1,30 @@
++# language: pt
++@tema
++Funcionalidade: Alternar tema claro/escuro
++
++  @CT-033 @smoke
++  Cenário: Ativar o modo escuro pelo atalho do cabeçalho
++    Dado que o tema atual é "Claro"
++    Quando toco em "Mudar para o modo escuro"
++    Então a interface passa a usar o tema escuro
++    E o ícone muda para sol com o rótulo "Mudar para o modo claro"
++
++  @CT-034
++  Cenário: Preferência persiste no dispositivo
++    Dado que ativei o modo escuro
++    Quando recarrego o app
++    Então o tema escuro continua aplicado
++
++  @CT-035 @visual
++  Esquema do Cenário: Legibilidade no modo escuro
++    Dado que o modo escuro está ativo
++    Quando abro a tela "<tela>"
++    Então textos, badges e ícones mantêm contraste mínimo AA (4,5:1)
++
++    Exemplos:
++      | tela        |
++      | Início      |
++      | Escalas     |
++      | Biblioteca  |
++      | Ministérios |
++      | Perfil      |
+diff --git a/docs/casos-de-teste-holyset/gherkin/T08_perfil.feature b/docs/casos-de-teste-holyset/gherkin/T08_perfil.feature
+new file mode 100644
+index 0000000..32582e7
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T08_perfil.feature
+@@ -0,0 +1,41 @@
++# language: pt
++@perfil
++Funcionalidade: Visualizar perfil
++
++  Contexto:
++    Dado que estou logado
++    Quando abro "Meu perfil"
++
++  @CT-036
++  Cenário: Dados pessoais
++    Então vejo meu nome, "Membro desde 2026", e-mail, celular e data de nascimento
++
++  @CT-037 @regressao
++  Cenário: Estatísticas coerentes com os ministérios
++    Dado que participo de 5 ministérios e sou líder em "Projeção"
++    Então "ministérios ativos" deve mostrar 5
++    E o chip de função não deve ser "Sem função definida"
++
++  @CT-038
++  Esquema do Cenário: Abrir configurações
++    Quando toco em "<opção>"
++    Então abre o modal "<modal>"
++
++    Exemplos:
++      | opção        | modal          |
++      | Notificações | NOTIFICAÇÕES   |
++      | Aparência    | APARÊNCIA      |
++      | Segurança    | SEGURANÇA      |
++      | Preferências | PREFERÊNCIAS   |
++
++  @CT-039 @destrutivo
++  Cenário: Sair da conta
++    Quando toco em "Sair da conta"
++    Então devo ver uma confirmação
++    Quando confirmo
++    Então volto para a tela de login e a sessão é encerrada
++
++  @CT-040
++  Cenário: Voltar
++    Quando toco em "Voltar"
++    Então retorno à tela anterior
+diff --git a/docs/casos-de-teste-holyset/gherkin/T09_perfil-editar-dados.feature b/docs/casos-de-teste-holyset/gherkin/T09_perfil-editar-dados.feature
+new file mode 100644
+index 0000000..bb9a80e
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T09_perfil-editar-dados.feature
+@@ -0,0 +1,37 @@
++# language: pt
++@perfil @edicao
++Funcionalidade: Editar dados pessoais
++
++  Contexto:
++    Dado que estou no Perfil
++    Quando toco em "Editar"
++
++  @CT-041
++  Cenário: Campos vêm preenchidos
++    Então "Nome de exibição", "Celular" e "Data de nascimento" mostram os valores atuais
++    E o DDI do celular é "PT +351"
++
++  @CT-042 @smoke
++  Cenário: Salvar alteração de nome
++    Quando altero "Nome de exibição" para "Nome Sobrenome"
++    E toco em "Salvar"
++    Então o modal fecha
++    E o perfil e a equipe mostram "Nome Sobrenome"
++
++  @CT-043 @negativo
++  Esquema do Cenário: Validações
++    Quando preencho "<campo>" com "<valor>"
++    E toco em "Salvar"
++    Então vejo o erro "<erro>"
++
++    Exemplos:
++      | campo              | valor       | erro                    |
++      | Nome de exibição   |             | nome obrigatório        |
++      | Celular            | 12          | número inválido         |
++      | Data de nascimento | 01/01/2030  | data no futuro inválida |
++
++  @CT-044
++  Cenário: Cancelar descarta alterações
++    Quando altero o nome
++    E toco em "Cancelar"
++    Então o perfil continua com o nome original
+diff --git a/docs/casos-de-teste-holyset/gherkin/T10_avatar-escolher.feature b/docs/casos-de-teste-holyset/gherkin/T10_avatar-escolher.feature
+new file mode 100644
+index 0000000..1c84508
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T10_avatar-escolher.feature
+@@ -0,0 +1,27 @@
++# language: pt
++@perfil @avatar
++Funcionalidade: Escolher avatar pronto
++
++  Contexto:
++    Dado que estou no Perfil
++    Quando toco em "Editar avatar"
++
++  @CT-045
++  Cenário: Avatar atual vem marcado
++    Então o avatar que uso hoje aparece selecionado na grade
++
++  @CT-046 @smoke
++  Cenário: Trocar de avatar
++    Quando seleciono "Gatinho"
++    Então o botão "Usar este avatar" fica habilitado
++    Quando toco em "Usar este avatar"
++    Então meu avatar é atualizado no perfil, na equipe e nas escalas
++
++  @CT-047
++  Cenário: Botão desabilitado sem seleção
++    Então "Usar este avatar" fica desabilitado enquanto nenhum avatar novo é escolhido
++
++  @CT-048
++  Cenário: Ir para o editor
++    Quando toco em "Montar o meu"
++    Então abre a tela "Montar avatar"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T11_avatar-montar.feature b/docs/casos-de-teste-holyset/gherkin/T11_avatar-montar.feature
+new file mode 100644
+index 0000000..1dfd90e
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T11_avatar-montar.feature
+@@ -0,0 +1,53 @@
++# language: pt
++@perfil @avatar @editor
++Funcionalidade: Montar avatar personalizado
++
++  Contexto:
++    Dado que estou na tela "Montar avatar"
++
++  @CT-049
++  Esquema do Cenário: Trocar item de uma categoria
++    Quando abro a aba "<aba>"
++    E seleciono uma opção diferente
++    Então a pré-visualização é atualizada na hora
++    E a opção escolhida fica com contorno de selecionada
++
++    Exemplos:
++      | aba     |
++      | Corpo   |
++      | Rosto   |
++      | Cabelo  |
++      | Óculos  |
++      | Chapéu  |
++      | Enfeite |
++
++  @CT-050
++  Cenário: Trocar cores
++    Quando escolho uma "Cor do corpo", uma "Cor do cabelo" e uma "Cor de fundo"
++    Então a pré-visualização reflete as três cores
++
++  @CT-051 @visual
++  Cenário: Camadas do avatar
++    Dado que tenho um cabelo com topete selecionado
++    Quando escolho um chapéu (gorro, boné, coroa ou chapéu de bruxa)
++    Então o chapéu fica por cima do cabelo, sem o cabelo atravessar
++
++  @CT-052
++  Cenário: Sortear
++    Quando toco em "Sortear"
++    Então uma combinação aleatória é aplicada
++
++  @CT-053
++  Cenário: Salvar avatar montado
++    Quando toco em "Salvar"
++    Então volto ao perfil com o novo avatar
++
++  @CT-054
++  Cenário: Sair sem salvar
++    Quando toco em "Voltar sem salvar"
++    Então o avatar anterior é mantido
++
++  @CT-055 @ux
++  Cenário: Abas roláveis horizontalmente em telas estreitas
++    Dado que a tela tem 360 px de largura
++    Então consigo rolar as abas até "Enfeite"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T12_perfil-notificacoes.feature b/docs/casos-de-teste-holyset/gherkin/T12_perfil-notificacoes.feature
+new file mode 100644
+index 0000000..79d1a4f
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T12_perfil-notificacoes.feature
+@@ -0,0 +1,33 @@
++# language: pt
++@perfil @notificacoes
++Funcionalidade: Preferências de notificação
++
++  Contexto:
++    Dado que estou no Perfil
++    Quando abro "Notificações"
++
++  @CT-056
++  Cenário: Status do push
++    Então vejo "Notificações push · Ativas neste dispositivo · Ativo"
++
++  @CT-057 @smoke
++  Cenário: Desligar um tipo de alerta
++    Quando desligo a chave "Repertório"
++    E toco em "Salvar"
++    Então não recebo push quando uma playlist for criada ou alterada
++
++  @CT-058
++  Cenário: Recurso futuro bloqueado
++    Então "Trocas de escala" mostra a etiqueta "EM BREVE"
++    E a chave está desabilitada
++
++  @CT-059
++  Cenário: Cancelar não salva
++    Quando altero qualquer chave
++    E toco em "Cancelar"
++    Então as preferências anteriores continuam valendo
++
++  @CT-060
++  Cenário: Permissão de push negada no navegador
++    Dado que o navegador bloqueou notificações
++    Então o status mostra "Inativo" com instrução para reativar
+diff --git a/docs/casos-de-teste-holyset/gherkin/T13_perfil-aparencia.feature b/docs/casos-de-teste-holyset/gherkin/T13_perfil-aparencia.feature
+new file mode 100644
+index 0000000..c1491c5
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T13_perfil-aparencia.feature
+@@ -0,0 +1,17 @@
++# language: pt
++@perfil @tema
++Funcionalidade: Aparência pelo perfil
++
++  @CT-061
++  Cenário: Selecionar tema escuro
++    Dado que estou no modal "Aparência" com "Claro" selecionado
++    Quando toco em "Escuro"
++    Então o tema muda na hora
++    E "Escuro" fica com o check de selecionado
++    E a linha "Aparência" do perfil passa a mostrar "Escuro"
++
++  @CT-062
++  Cenário: Coerência com o atalho do cabeçalho
++    Dado que mudei o tema pelo ícone de lua
++    Quando abro "Aparência"
++    Então a opção marcada é a mesma do tema atual
+diff --git a/docs/casos-de-teste-holyset/gherkin/T14_perfil-seguranca.feature b/docs/casos-de-teste-holyset/gherkin/T14_perfil-seguranca.feature
+new file mode 100644
+index 0000000..868fa52
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T14_perfil-seguranca.feature
+@@ -0,0 +1,16 @@
++# language: pt
++@perfil @seguranca
++Funcionalidade: Trocar senha
++
++  @CT-063
++  Cenário: Enviar link de redefinição
++    Dado que estou no modal "Segurança"
++    Então vejo o e-mail da conta no texto explicativo
++    Quando toco em "Enviar link"
++    Então vejo confirmação de envio
++    E recebo o e-mail com o link de redefinição
++
++  @CT-064
++  Cenário: Fechar sem enviar
++    Quando toco em "Fechar"
++    Então nenhum e-mail é enviado
+diff --git a/docs/casos-de-teste-holyset/gherkin/T15_perfil-preferencias.feature b/docs/casos-de-teste-holyset/gherkin/T15_perfil-preferencias.feature
+new file mode 100644
+index 0000000..aeaf895
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T15_perfil-preferencias.feature
+@@ -0,0 +1,33 @@
++# language: pt
++@perfil @preferencias
++Funcionalidade: Preferências do integrante
++
++  Contexto:
++    Dado que estou no Perfil
++    Quando abro "Preferências"
++
++  @CT-065
++  Cenário: Definir funções preferidas
++    Quando toco em "Editar" em "Instrumentos / funções preferidos"
++    E marco "Violão" e "Vocal"
++    E toco em "Salvar"
++    Então o perfil mostra "Violão · Vocal"
++    E na escala o dropdown de instrumento só oferece essas opções
++
++  @CT-066
++  Cenário: Sem funções marcadas
++    Dado que nenhuma função está marcada
++    Então vejo "Sem funções marcadas — todas as opções ficam disponíveis na escala."
++
++  @CT-067
++  Esquema do Cenário: Ministério padrão ao abrir o app
++    Quando seleciono "<opção>" em "Ministério padrão ao abrir o app"
++    E toco em "Salvar"
++    E reabro o app
++    Então o ministério em uso é "<resultado>"
++
++    Exemplos:
++      | opção           | resultado                   |
++      | Último utilizado| o último ministério aberto  |
++      | Diaconia   | Diaconia               |
++      | Louvor     | Louvor                 |
+diff --git a/docs/casos-de-teste-holyset/gherkin/T16_escalas-minha-agenda.feature b/docs/casos-de-teste-holyset/gherkin/T16_escalas-minha-agenda.feature
+new file mode 100644
+index 0000000..90e0d0c
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T16_escalas-minha-agenda.feature
+@@ -0,0 +1,21 @@
++# language: pt
++@escalas @agenda
++Funcionalidade: Minha agenda
++
++  @CT-068
++  Cenário: Sem escalas
++    Dado que não estou escalado em nenhum culto futuro
++    Quando abro "Escalas" > "Minha agenda"
++    Então vejo "Você não está escalado nos próximos cultos."
++    E o link "Ver escalas por ministério"
++
++  @CT-069
++  Cenário: Escalas de vários ministérios
++    Dado que estou escalado no Louvor e na Diaconia
++    Quando abro "Minha agenda"
++    Então vejo as duas escalas em ordem de data, cada uma com o nome do ministério
++
++  @CT-070
++  Cenário: Atalho para escalas por ministério
++    Quando toco em "Ver escalas por ministério"
++    Então a aba "Por ministério" é aberta
+diff --git a/docs/casos-de-teste-holyset/gherkin/T17_escalas-por-ministerio.feature b/docs/casos-de-teste-holyset/gherkin/T17_escalas-por-ministerio.feature
+new file mode 100644
+index 0000000..428a195
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T17_escalas-por-ministerio.feature
+@@ -0,0 +1,37 @@
++# language: pt
++@escalas
++Funcionalidade: Escalas da equipe por ministério
++
++  Contexto:
++    Dado que o ministério em uso é "Louvor"
++    Quando abro "Escalas" > "Por ministério"
++
++  @CT-071
++  Cenário: Resumo no cabeçalho
++    Então vejo "Louvor · 3 próximos · 9 cultos no total"
++
++  @CT-072
++  Cenário: Próximas escalas
++    Então vejo os cultos futuros agrupados por mês em ordem crescente
++    E o primeiro tem a etiqueta "Próximo"
++    E cada card mostra dia da semana, data, nome, avatares e "N pessoas"
++
++  @CT-073
++  Cenário: Escalas anteriores
++    Quando toco em "Anteriores"
++    Então vejo os cultos passados em ordem decrescente agrupados por mês
++    E "Próximas" + "Anteriores" somam o total do cabeçalho
++
++  @CT-074
++  Cenário: Abrir detalhe
++    Quando toco no culto "Culto 17/10"
++    Então abre o detalhe da escala
++
++  @CT-075
++  Cenário: Trocar ministério
++    Quando toco em "Trocar"
++    Então vou para a lista de ministérios
++
++  @CT-076 @dados
++  Cenário: Padrão de nome dos cultos
++    Então os nomes dos cultos seguem um padrão único (ex.: "Culto dd/mm")
+diff --git a/docs/casos-de-teste-holyset/gherkin/T18_escala-detalhe.feature b/docs/casos-de-teste-holyset/gherkin/T18_escala-detalhe.feature
+new file mode 100644
+index 0000000..1a54cfc
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T18_escala-detalhe.feature
+@@ -0,0 +1,30 @@
++# language: pt
++@escalas @detalhe
++Funcionalidade: Detalhe da escala
++
++  Contexto:
++    Dado que abri a escala "Culto 17/10"
++
++  @CT-077
++  Cenário: Cabeçalho
++    Então vejo "Sábado, 17 de outubro", o nome "Culto 17/10" e "Equipe · 7 integrantes"
++
++  @CT-078
++  Cenário: Equipe com funções
++    Então cada integrante aparece com avatar, nome e função (ex.: "Baixo")
++    E "Ministro" e "Diretor musical" aparecem como papéis de destaque
++
++  @CT-079 @dados
++  Cenário: Nome de exibição
++    Então nenhum integrante é exibido pelo username/prefixo de e-mail
++
++  @CT-080
++  Cenário: Repertório vinculado
++    Quando toco em "Culto 17/10 · 4 louvores · ver repertório"
++    Então abre a playlist do culto
++
++  @CT-081 @permissao
++  Cenário: Notas do culto somente leitura para membro
++    Dado que sou membro sem permissão de edição
++    Quando toco em "Notas do culto"
++    Então nada é editável
+diff --git a/docs/casos-de-teste-holyset/gherkin/T19_playlists-lista.feature b/docs/casos-de-teste-holyset/gherkin/T19_playlists-lista.feature
+new file mode 100644
+index 0000000..36153c6
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T19_playlists-lista.feature
+@@ -0,0 +1,24 @@
++# language: pt
++@playlists
++Funcionalidade: Lista de playlists
++
++  Contexto:
++    Dado que o ministério em uso é "Louvor"
++    Quando abro "Playlists"
++
++  @CT-082
++  Cenário: Resumo
++    Então vejo "4 playlists cadastradas"
++
++  @CT-083
++  Cenário: Card da playlist
++    Então cada card mostra data, nome, avatares da equipe e o total de músicas
++
++  @CT-084 @ux
++  Cenário: Ordenação
++    Então a ordem segue o mesmo critério da tela Escalas (próximas primeiro)
++
++  @CT-085
++  Cenário: Abrir playlist
++    Quando toco em "Culto 17/10"
++    Então abre a ordem do culto com 4 louvores
+diff --git a/docs/casos-de-teste-holyset/gherkin/T20_playlist-detalhe.feature b/docs/casos-de-teste-holyset/gherkin/T20_playlist-detalhe.feature
+new file mode 100644
+index 0000000..d3fe267
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T20_playlist-detalhe.feature
+@@ -0,0 +1,34 @@
++# language: pt
++@playlists @detalhe
++Funcionalidade: Ordem do culto
++
++  Contexto:
++    Dado que abri a playlist "Culto 17/10"
++
++  @CT-086
++  Cenário: Conteúdo
++    Então vejo "Sábado, 17 de outubro · 4 louvores"
++    E a "Escala vinculada" com os avatares
++    E as músicas numeradas com artista e tom
++
++  @CT-087
++  Cenário: Abrir no YouTube
++    Quando toco em "⋯" e depois em "Abrir no YouTube"
++    Então a playlist abre no YouTube em nova aba
++
++  @CT-088 @permissao
++  Cenário: Opções de edição só para quem pode editar
++    Dado que sou membro sem permissão de edição
++    Quando toco em "⋯"
++    Então não vejo "Editar" nem "Excluir"
++    E o rótulo acessível do botão não menciona editar/excluir
++
++  @CT-089 @navegacao
++  Cenário: Voltar para a origem
++    Dado que abri a playlist a partir do detalhe da escala
++    Quando toco em voltar
++    Então volto para o detalhe da escala
++
++  @CT-090 @dados
++  Cenário: Revisão de conteúdo
++    Então os títulos não têm erros de digitação (ex.: "Eu vou construir")
+diff --git a/docs/casos-de-teste-holyset/gherkin/T21_biblioteca-musicas.feature b/docs/casos-de-teste-holyset/gherkin/T21_biblioteca-musicas.feature
+new file mode 100644
+index 0000000..0761892
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T21_biblioteca-musicas.feature
+@@ -0,0 +1,29 @@
++# language: pt
++@biblioteca
++Funcionalidade: Biblioteca de músicas
++
++  Contexto:
++    Dado que abri "Playlists" > "Biblioteca" > "Músicas"
++
++  @CT-091
++  Cenário: Contagem
++    Então vejo "20 louvores na biblioteca"
++    E a lista tem 20 itens
++
++  @CT-092
++  Cenário: Informações do item
++    Então cada música mostra título, tom, artista
++    E a categoria e o marcador "VÍDEO" aparecem quando existirem
++
++  @CT-093
++  Cenário: Ordem alfabética
++    Então as músicas estão em ordem alfabética pelo título
++
++  @CT-094
++  Cenário: Abrir vídeo
++    Quando toco em "VÍDEO" de "Digno é o Senhor"
++    Então o vídeo abre no YouTube
++
++  @CT-095 @acessibilidade
++  Cenário: Contraste dos badges de tom
++    Então o badge de tom tem contraste mínimo de 4,5:1
+diff --git a/docs/casos-de-teste-holyset/gherkin/T22_biblioteca-busca.feature b/docs/casos-de-teste-holyset/gherkin/T22_biblioteca-busca.feature
+new file mode 100644
+index 0000000..1d73a12
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T22_biblioteca-busca.feature
+@@ -0,0 +1,31 @@
++# language: pt
++@biblioteca @busca
++Funcionalidade: Buscar música
++
++  Contexto:
++    Dado que estou em "Biblioteca" > "Músicas"
++
++  @CT-096 @smoke
++  Cenário: Buscar por artista sem diferenciar maiúsculas
++    Quando digito "fhop" na busca
++    Então vejo "Doce Presença", "Meia noite", "Nada Mais" e "Sublime"
++
++  @CT-097
++  Cenário: Buscar por título parcial
++    Quando digito "presen"
++    Então vejo "Doce Presença", "Em Tua Presença" e "Jesus em Tua Presença"
++
++  @CT-098
++  Cenário: Busca ignorando acentos
++    Quando digito "estacoes"
++    Então vejo "Estações"
++
++  @CT-099 @negativo
++  Cenário: Sem resultados
++    Quando digito "xyzabc"
++    Então vejo "NENHUMA MÚSICA" e "Nenhum resultado para sua busca."
++
++  @CT-100
++  Cenário: Limpar busca
++    Quando toco no "×" do campo
++    Então a lista completa volta
+diff --git a/docs/casos-de-teste-holyset/gherkin/T23_biblioteca-filtro.feature b/docs/casos-de-teste-holyset/gherkin/T23_biblioteca-filtro.feature
+new file mode 100644
+index 0000000..1a384a1
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T23_biblioteca-filtro.feature
+@@ -0,0 +1,43 @@
++# language: pt
++@biblioteca @filtro
++Funcionalidade: Filtrar por categoria
++
++  Contexto:
++    Dado que estou em "Biblioteca" > "Músicas"
++    Quando toco em "Filtrar por Categoria"
++
++  @CT-101
++  Cenário: Filtrar por Adoração
++    Quando seleciono "Adoração"
++    Então o botão vira "Filtrando: Adoração" com um "×"
++    E vejo só "Cristo" e "Era Eu"
++
++  @CT-102 @negativo
++  Cenário: Categoria sem músicas
++    Quando seleciono "Soberania"
++    Então vejo um estado vazio que cita o filtro de categoria
++    E o estado vazio fica totalmente visível acima da navegação inferior
++
++  @CT-103
++  Cenário: Remover filtro
++    Dado que estou filtrando por "Adoração"
++    Quando toco no "×" ou em "Todas"
++    Então a lista completa volta
++
++  @CT-104
++  Cenário: Criar categoria personalizada
++    Quando toco em "Personalizar"
++    E digito "Natal" em "Nova categoria..."
++    E toco em "+"
++    Então o chip "Natal" aparece na lista de categorias
++
++  @CT-105 @negativo
++  Cenário: Categoria duplicada ou vazia
++    Quando tento criar a categoria "Adoração" ou um nome vazio
++    Então a criação é bloqueada com mensagem
++
++  @CT-106
++  Cenário: Busca combinada com filtro
++    Dado que estou filtrando por "Adoração"
++    Quando busco "era"
++    Então vejo só "Era Eu"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T24_biblioteca-pastas.feature b/docs/casos-de-teste-holyset/gherkin/T24_biblioteca-pastas.feature
+new file mode 100644
+index 0000000..95651cd
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T24_biblioteca-pastas.feature
+@@ -0,0 +1,13 @@
++# language: pt
++@biblioteca @pastas
++Funcionalidade: Pastas da biblioteca
++
++  @CT-107
++  Cenário: Listar pastas
++    Dado que estou em "Biblioteca" > "Pastas"
++    Então vejo "2º semestre 2026" com "1 música"
++
++  @CT-108
++  Cenário: Abrir pasta
++    Quando toco em "2º semestre 2026"
++    Então vejo as músicas da pasta
+diff --git a/docs/casos-de-teste-holyset/gherkin/T25_pasta-detalhe.feature b/docs/casos-de-teste-holyset/gherkin/T25_pasta-detalhe.feature
+new file mode 100644
+index 0000000..a7a66fa
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T25_pasta-detalhe.feature
+@@ -0,0 +1,20 @@
++# language: pt
++@biblioteca @pastas
++Funcionalidade: Conteúdo da pasta
++
++  Contexto:
++    Dado que abri a pasta "2º semestre 2026"
++
++  @CT-109
++  Cenário: Concordância do contador
++    Então vejo "1 música na pasta" (singular)
++
++  @CT-110
++  Cenário: Buscar na pasta
++    Quando digito "est" em "Buscar na pasta..."
++    Então vejo "Estações"
++
++  @CT-111
++  Cenário: Voltar para pastas
++    Quando toco em "Voltar para Pastas"
++    Então vejo a lista de pastas
+diff --git a/docs/casos-de-teste-holyset/gherkin/T26_ministerios-lista.feature b/docs/casos-de-teste-holyset/gherkin/T26_ministerios-lista.feature
+new file mode 100644
+index 0000000..26a329f
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T26_ministerios-lista.feature
+@@ -0,0 +1,36 @@
++# language: pt
++@ministerios
++Funcionalidade: Lista e troca de ministérios
++
++  Contexto:
++    Quando abro "Ministérios"
++
++  @CT-112
++  Cenário: Listar ministérios
++    Então vejo "Você participa de 5 · toque para trocar"
++    E vejo Projeção, Iluminação, Som, Diaconia e Louvor
++    E só "Louvor" tem o selo "Em uso"
++
++  @CT-113 @smoke
++  Cenário: Trocar o ministério em uso
++    Quando toco em "Diaconia"
++    Então "Diaconia" passa a ter o selo "Em uso"
++    E a navegação inferior mostra "Checklist" no lugar de "Playlists"
++
++  @CT-114
++  Esquema do Cenário: Navegação inferior por tipo de ministério
++    Quando troco para "<ministério>"
++    Então a navegação inferior tem "<abas>"
++
++    Exemplos:
++      | ministério    | abas                                     |
++      | Louvor   | Início, Escalas, Playlists, Ministérios  |
++      | Diaconia | Início, Escalas, Checklist, Ministérios  |
++      | Som           | Início, Escalas, Ministérios             |
++      | Projeção      | Início, Escalas, Ministérios             |
++
++  @CT-115
++  Cenário: Indicador de pedidos pendentes para líder
++    Dado que sou líder de "Projeção" com 1 pedido pendente
++    Então o card mostra "1 pedido"
++    E a aba aparece como "Equipe · 1"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T27_entrar-com-codigo.feature b/docs/casos-de-teste-holyset/gherkin/T27_entrar-com-codigo.feature
+new file mode 100644
+index 0000000..8af595d
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T27_entrar-com-codigo.feature
+@@ -0,0 +1,42 @@
++# language: pt
++@ministerios @convite
++Funcionalidade: Entrar em ministério por código
++
++  Contexto:
++    Dado que estou em "Ministérios"
++    Quando toco em "Entrar com código"
++
++  @CT-116
++  Cenário: Estado inicial
++    Então vejo o placeholder "EX: K7Q2MZ4P"
++    E o botão "Entrar" está desabilitado
++
++  @CT-117
++  Cenário: Código em maiúsculas automaticamente
++    Quando digito "teste123"
++    Então o campo mostra "TESTE123"
++
++  @CT-118 @negativo
++  Cenário: Código inválido
++    Quando digito um código inexistente
++    Então vejo um indicador de carregamento
++    E depois "Código inválido ou desativado."
++    E "Entrar" continua desabilitado
++
++  @CT-119 @smoke
++  Cenário: Código válido com aprovação
++    Dado que o convite exige aprovação do líder
++    Quando digito um código válido e toco em "Entrar"
++    Então vejo que meu pedido foi enviado
++    E o líder vê o pedido na aba "Pedidos"
++
++  @CT-120
++  Cenário: Código válido sem aprovação
++    Dado que o convite não exige aprovação
++    Quando digito um código válido e toco em "Entrar"
++    Então o ministério aparece na minha lista
++
++  @CT-121 @negativo
++  Cenário: Código de ministério do qual já participo
++    Quando digito o código de um ministério em que já estou
++    Então vejo a mensagem "Você já participa deste ministério"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T28_ministerios-equipe.feature b/docs/casos-de-teste-holyset/gherkin/T28_ministerios-equipe.feature
+new file mode 100644
+index 0000000..98dc094
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T28_ministerios-equipe.feature
+@@ -0,0 +1,29 @@
++# language: pt
++@ministerios @equipe
++Funcionalidade: Equipe do ministério (visão de membro)
++
++  Contexto:
++    Dado que sou membro de "Louvor"
++    Quando abro "Ministérios" > "Equipe"
++
++  @CT-122
++  Cenário: Seções e contagem
++    Então vejo "Liderança · 2" e "Integrantes · 20"
++    E a quantidade de nomes listados bate com as contagens
++
++  @CT-123
++  Cenário: Identificação do usuário
++    Então meu nome aparece com "(você)"
++
++  @CT-124 @dados
++  Cenário: Funções coerentes com as escalas
++    Dado que "Integrante B" toca guitarra nas escalas
++    Então o card dele não mostra "Sem função definida"
++
++  @CT-125 @permissao
++  Cenário: Membro não gerencia equipe
++    Então não vejo menus "⋮" nem "Adicionar pessoas"
++
++  @CT-126 @privacidade
++  Cenário: Nomes sem dados de e-mail
++    Então nenhum integrante é exibido pelo prefixo do e-mail
+diff --git a/docs/casos-de-teste-holyset/gherkin/T29_diaconia-inicio.feature b/docs/casos-de-teste-holyset/gherkin/T29_diaconia-inicio.feature
+new file mode 100644
+index 0000000..06fa948
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T29_diaconia-inicio.feature
+@@ -0,0 +1,24 @@
++# language: pt
++@diaconia @inicio
++Funcionalidade: Início da Diaconia
++
++  Contexto:
++    Dado que o ministério em uso é "Diaconia"
++    Quando abro "Início"
++
++  @CT-127
++  Cenário: Cards exclusivos
++    Então vejo o card "Visitantes" com "0 no total"
++    E o card "Avaliação" com o mês atual
++    E os atalhos "Escalas da equipe", "Equipe" e "Checklist do culto"
++
++  @CT-128
++  Cenário: Navegar pela avaliação
++    Quando toco em "Mês anterior" no card "Avaliação"
++    Então vejo a avaliação de setembro de 2026
++    E "Próximo mês" fica desabilitado quando estou no mês atual
++
++  @CT-129
++  Cenário: Abrir visitantes
++    Quando toco no card "Visitantes"
++    Então abre "Checklist" > "Visitantes"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T30_diaconia-visitantes.feature b/docs/casos-de-teste-holyset/gherkin/T30_diaconia-visitantes.feature
+new file mode 100644
+index 0000000..b714570
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T30_diaconia-visitantes.feature
+@@ -0,0 +1,15 @@
++# language: pt
++@diaconia @visitantes
++Funcionalidade: Visitantes
++
++  @CT-130
++  Cenário: Estado vazio
++    Dado que nenhum visitante foi registrado
++    Quando abro "Checklist" > "Visitantes"
++    Então vejo "NENHUM VISITANTE AINDA" e a explicação de onde eles aparecem
++
++  @CT-131
++  Cenário: Visitante registrado aparece na lista
++    Dado que um visitante foi registrado no checklist de "Culto 17"
++    Quando abro "Visitantes"
++    Então vejo nome, telefone e data do culto
+diff --git a/docs/casos-de-teste-holyset/gherkin/T31_diaconia-checklist-cultos.feature b/docs/casos-de-teste-holyset/gherkin/T31_diaconia-checklist-cultos.feature
+new file mode 100644
+index 0000000..884204b
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T31_diaconia-checklist-cultos.feature
+@@ -0,0 +1,21 @@
++# language: pt
++@diaconia @checklist
++Funcionalidade: Lista de checklists por culto
++
++  Contexto:
++    Quando abro "Checklist" > "Cultos"
++
++  @CT-132
++  Cenário: Próximos cultos com progresso
++    Então vejo "Culto 17", "Culto 24" e "Culto 31"
++    E cada um mostra "0/16 tarefas"
++
++  @CT-133
++  Cenário: Anteriores vazio
++    Quando toco em "Anteriores"
++    Então vejo "NENHUM CULTO ANTERIOR" e a orientação para criar o culto em Escalas
++
++  @CT-134
++  Cenário: Culto criado em Escalas gera checklist
++    Dado que um líder criou o culto "Culto 07/11" em Escalas
++    Então o checklist desse culto aparece em "Próximos"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T32_diaconia-checklist-detalhe.feature b/docs/casos-de-teste-holyset/gherkin/T32_diaconia-checklist-detalhe.feature
+new file mode 100644
+index 0000000..12138b9
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T32_diaconia-checklist-detalhe.feature
+@@ -0,0 +1,36 @@
++# language: pt
++@diaconia @checklist
++Funcionalidade: Checklist do culto
++
++  Contexto:
++    Dado que abri o checklist de "Culto 17"
++
++  @CT-135
++  Cenário: Cabeçalho
++    Então vejo "Sábado, 17 de outubro", o responsável "Responsável X"
++    E "0 de 16 tarefas feitas" com 0%
++
++  @CT-136 @permissao
++  Cenário: Usuário não escalado só visualiza
++    Dado que não estou escalado neste culto
++    Então vejo "Você não está escalado neste culto: o checklist fica só para visualização."
++    E checkboxes e o contador de pessoas estão desabilitados
++    E eles têm aparência visual de desabilitados
++
++  @CT-137 @smoke
++  Cenário: Marcar tarefa como feita
++    Dado que estou escalado neste culto
++    Quando marco "Banheiros" como feita
++    Então o progresso vai para "1 de 16" (6%)
++    E "Pré-culto" mostra "1 de 4"
++
++  @CT-138
++  Cenário: Contador de pessoas
++    Dado que estou escalado
++    Quando toco em "Aumentar" 3 vezes e "Diminuir" 1 vez
++    Então "Pessoas no culto" mostra 2
++    E "Diminuir" fica desabilitado em 0
++
++  @CT-139
++  Cenário: Seções
++    Então vejo "Pré-culto 0 de 4", "Durante o culto 0 de 7" e "Pós-culto 0 de 5"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T33_diaconia-checklist-tarefa.feature b/docs/casos-de-teste-holyset/gherkin/T33_diaconia-checklist-tarefa.feature
+new file mode 100644
+index 0000000..3b77b66
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T33_diaconia-checklist-tarefa.feature
+@@ -0,0 +1,24 @@
++# language: pt
++@diaconia @checklist
++Funcionalidade: Detalhe da tarefa e filtro
++
++  @CT-140
++  Cenário: Expandir tarefa
++    Quando toco em "Banheiros"
++    Então vejo "O que fazer" com os passos
++    E "Quem faz" com "Ninguém atribuído ainda."
++
++  @CT-141
++  Cenário: Só as minhas sem tarefas
++    Quando toco em "Só as minhas"
++    Então vejo "Nenhuma tarefa atribuída a você neste culto."
++
++  @CT-142
++  Cenário: Só as minhas com tarefas
++    Dado que "Água" está atribuída a mim
++    Quando toco em "Só as minhas"
++    Então vejo apenas "Água"
++
++  @CT-143 @conteudo
++  Cenário: Idioma consistente
++    Então os textos usam uma única variante do português
+diff --git a/docs/casos-de-teste-holyset/gherkin/T34_diaconia-escalas.feature b/docs/casos-de-teste-holyset/gherkin/T34_diaconia-escalas.feature
+new file mode 100644
+index 0000000..593c4f8
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T34_diaconia-escalas.feature
+@@ -0,0 +1,21 @@
++# language: pt
++@diaconia @escalas
++Funcionalidade: Escalas da Diaconia
++
++  @CT-144
++  Cenário: Cultos sem equipe
++    Quando abro "Escalas" > "Por ministério" com a Diaconia em uso
++    Então vejo "Diaconia · 3 próximos · 3 cultos no total"
++    E os cultos sem escala mostram "Ninguém escalado"
++
++  @CT-145
++  Cenário: Detalhe com notas
++    Quando abro "Culto 17"
++    Então vejo "Responsável X · Responsável", "Integrante C · Equipe"
++    E as "Notas do dia" com o texto cadastrado
++
++  @CT-146 @acessibilidade
++  Cenário: Rótulo acessível das notas
++    Dado que o culto tem notas
++    Então o leitor de tela anuncia o texto das notas
++    E não "Nenhuma observação adicionada."
+diff --git a/docs/casos-de-teste-holyset/gherkin/T35_som-escalas-inicio.feature b/docs/casos-de-teste-holyset/gherkin/T35_som-escalas-inicio.feature
+new file mode 100644
+index 0000000..3643ee4
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T35_som-escalas-inicio.feature
+@@ -0,0 +1,20 @@
++# language: pt
++@som
++Funcionalidade: Ministério de Som (membro)
++
++  Contexto:
++    Dado que o ministério em uso é "Som"
++
++  @CT-147
++  Cenário: Sem cultos
++    Quando abro "Escalas" > "Por ministério"
++    Então vejo "Som · 0 próximos · 0 cultos no total" e "NENHUM CULTO AGENDADO"
++
++  @CT-148 @permissao
++  Cenário: Membro não vê ação de criar culto
++    Então não vejo "Criar Primeiro Culto" nem o botão flutuante
++
++  @CT-149
++  Cenário: Atalhos do Início
++    Quando abro "Início"
++    Então vejo "Escalas da equipe", "Equipe" e "Checklists"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T36_som-checklists.feature b/docs/casos-de-teste-holyset/gherkin/T36_som-checklists.feature
+new file mode 100644
+index 0000000..75a8da2
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T36_som-checklists.feature
+@@ -0,0 +1,15 @@
++# language: pt
++@som @checklist @regressao
++Funcionalidade: Checklists de ministérios técnicos
++
++  @CT-150
++  Cenário: Estrutura mínima da tela
++    Dado que o ministério em uso é "Som"
++    Quando toco em "Checklists" no Início
++    Então vejo um título de página e um botão de voltar
++    E um estado vazio explicando como criar checklists
++
++  @CT-151
++  Cenário: Volta pelo sistema
++    Quando uso o voltar do navegador/dispositivo
++    Então retorno ao Início
+diff --git a/docs/casos-de-teste-holyset/gherkin/T37_projecao-checklists.feature b/docs/casos-de-teste-holyset/gherkin/T37_projecao-checklists.feature
+new file mode 100644
+index 0000000..c6b792a
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T37_projecao-checklists.feature
+@@ -0,0 +1,15 @@
++# language: pt
++@projecao @checklist
++Funcionalidade: Checklists do ministério (líder)
++
++  @CT-152 @permissao
++  Cenário: Líder vê ação de criação
++    Dado que sou líder de "Projeção"
++    Quando abro "Checklists"
++    Então vejo o botão "Novo Checklist"
++
++  @CT-153 @navegacao
++  Cenário: Trocar de ministério volta para o Início
++    Dado que estou em "Checklists" do "Som"
++    Quando troco o ministério para "Projeção"
++    Então sou levado ao "Início" da Projeção
+diff --git a/docs/casos-de-teste-holyset/gherkin/T38_projecao-novo-checklist.feature b/docs/casos-de-teste-holyset/gherkin/T38_projecao-novo-checklist.feature
+new file mode 100644
+index 0000000..d7be618
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T38_projecao-novo-checklist.feature
+@@ -0,0 +1,24 @@
++# language: pt
++@projecao @checklist @criacao
++Funcionalidade: Criar checklist
++
++  Contexto:
++    Dado que sou líder de "Projeção"
++    Quando toco em "Novo Checklist"
++
++  @CT-154 @smoke
++  Cenário: Criar checklist válido
++    Quando preencho "Nome do checklist" com "Culto de Domingo"
++    E escolho a data "18/10/2026"
++    E toco em "Salvar"
++    Então o checklist aparece na lista e o contador vira "CHECKLISTS (1)"
++
++  @CT-155 @negativo
++  Cenário: Campos obrigatórios
++    Quando toco em "Salvar" com os campos vazios
++    Então o checklist não é criado e vejo os erros dos campos
++
++  @CT-156
++  Cenário: Cancelar
++    Quando toco em "Cancelar"
++    Então nada é criado
+diff --git a/docs/casos-de-teste-holyset/gherkin/T39_projecao-escalas.feature b/docs/casos-de-teste-holyset/gherkin/T39_projecao-escalas.feature
+new file mode 100644
+index 0000000..7e3a83a
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T39_projecao-escalas.feature
+@@ -0,0 +1,14 @@
++# language: pt
++@projecao @escalas
++Funcionalidade: Escalas da Projeção (líder)
++
++  @CT-157 @visual
++  Cenário: Estado vazio legível
++    Dado que "Projeção" não tem cultos
++    Quando abro "Escalas" > "Por ministério"
++    Então "NENHUM CULTO AGENDADO" não fica coberto pelo botão flutuante
++
++  @CT-158
++  Cenário: Duas entradas para criar culto
++    Quando toco em "Criar Primeiro Culto" ou em "Novo culto no Projeção"
++    Então abre o mesmo modal "Agendar novo culto"
+diff --git a/docs/casos-de-teste-holyset/gherkin/T40_projecao-novo-culto.feature b/docs/casos-de-teste-holyset/gherkin/T40_projecao-novo-culto.feature
+new file mode 100644
+index 0000000..c32391d
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T40_projecao-novo-culto.feature
+@@ -0,0 +1,25 @@
++# language: pt
++@projecao @escalas @criacao
++Funcionalidade: Agendar novo culto
++
++  Contexto:
++    Dado que sou líder de "Projeção"
++    Quando abro "Agendar novo culto"
++
++  @CT-159 @smoke
++  Cenário: Criar culto
++    Quando preencho "Nome do culto / evento" com "Culto 24/10"
++    E escolho a data "24/10/2026"
++    E toco em "Criar Culto"
++    Então o culto aparece em "Próximas"
++    E um checklist é gerado para ele
++
++  @CT-160 @negativo
++  Cenário: Data no passado
++    Quando escolho uma data anterior a hoje
++    Então vejo um aviso ou o culto vai direto para "Anteriores"
++
++  @CT-161 @negativo
++  Cenário: Campos obrigatórios
++    Quando toco em "Criar Culto" sem preencher nada
++    Então nenhum culto é criado
+diff --git a/docs/casos-de-teste-holyset/gherkin/T41_projecao-ministerios-lider.feature b/docs/casos-de-teste-holyset/gherkin/T41_projecao-ministerios-lider.feature
+new file mode 100644
+index 0000000..ab7b7dd
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T41_projecao-ministerios-lider.feature
+@@ -0,0 +1,15 @@
++# language: pt
++@projecao @ministerios
++Funcionalidade: Indicadores de liderança
++
++  @CT-162
++  Cenário: Selo de pedidos
++    Dado que sou líder de "Projeção" e há 1 pedido pendente
++    Quando abro "Ministérios"
++    Então o card "Projeção" mostra "Em uso" e "1 pedido"
++    E a aba aparece como "Equipe · 1"
++
++  @CT-163
++  Cenário: Selo some depois de tratar o pedido
++    Quando aceito ou recuso o pedido
++    Então o selo "1 pedido" deixa de aparecer
+diff --git a/docs/casos-de-teste-holyset/gherkin/T42_projecao-equipe-lider.feature b/docs/casos-de-teste-holyset/gherkin/T42_projecao-equipe-lider.feature
+new file mode 100644
+index 0000000..0ceeeeb
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T42_projecao-equipe-lider.feature
+@@ -0,0 +1,27 @@
++# language: pt
++@projecao @equipe @lider
++Funcionalidade: Gestão da equipe (líder)
++
++  Contexto:
++    Dado que sou líder de "Projeção"
++    Quando abro "Ministérios" > "Equipe"
++
++  @CT-164
++  Cenário: Seções
++    Então vejo as abas "Integrantes" e "Pedidos (1)"
++    E "Liderança · 3" e "Integrantes · 4"
++
++  @CT-165
++  Cenário: Filtrar por função
++    Quando toco no filtro "Violão"
++    Então só aparecem integrantes com a função Violão
++
++  @CT-166 @ux
++  Cenário: Carregamento sem informação falsa
++    Quando a lista ainda está carregando as funções
++    Então vejo um skeleton/loading
++    E não "Sem função definida" provisório
++
++  @CT-167 @visual
++  Cenário: Botão flutuante não cobre ações
++    Então o menu "⋮" do último item visível fica acessível
+diff --git a/docs/casos-de-teste-holyset/gherkin/T43_projecao-equipe-menu.feature b/docs/casos-de-teste-holyset/gherkin/T43_projecao-equipe-menu.feature
+new file mode 100644
+index 0000000..5260738
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T43_projecao-equipe-menu.feature
+@@ -0,0 +1,34 @@
++# language: pt
++@projecao @equipe @lider
++Funcionalidade: Ações sobre integrante
++
++  Contexto:
++    Dado que sou líder de "Projeção"
++    E abri o menu "⋮" de "Integrante D"
++
++  @CT-168
++  Cenário: Opções disponíveis
++    Então vejo "Editar funções", "Tornar admin" e "Remover da equipe"
++
++  @CT-169
++  Cenário: Editar funções
++    Quando toco em "Editar funções" e marco "Projeção"
++    E salvo
++    Então o card mostra "Projeção" como função
++
++  @CT-170
++  Cenário: Tornar admin
++    Quando toco em "Tornar admin" e confirmo
++    Então "Integrante D" passa para "Liderança"
++
++  @CT-171 @destrutivo
++  Cenário: Remover da equipe pede confirmação
++    Quando toco em "Remover da equipe"
++    Então vejo uma confirmação com o nome da pessoa
++    Quando confirmo
++    Então ela sai da lista e perde o acesso ao ministério
++
++  @CT-172 @negativo
++  Cenário: Líder não remove a si mesmo se for o único admin
++    Dado que sou o único líder
++    Então "Remover da equipe" não aparece no meu próprio menu
+diff --git a/docs/casos-de-teste-holyset/gherkin/T44_projecao-pedidos.feature b/docs/casos-de-teste-holyset/gherkin/T44_projecao-pedidos.feature
+new file mode 100644
+index 0000000..6dbf516
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T44_projecao-pedidos.feature
+@@ -0,0 +1,26 @@
++# language: pt
++@projecao @equipe @pedidos
++Funcionalidade: Aprovar pedidos de entrada
++
++  Contexto:
++    Dado que sou líder de "Projeção"
++    Quando abro "Equipe" > "Pedidos (1)"
++
++  @CT-173
++  Cenário: Dados do pedido
++    Então vejo o nome do solicitante e há quanto tempo pediu ("pediu ontem")
++
++  @CT-174 @smoke
++  Cenário: Aceitar pedido
++    Quando toco em "Aceitar"
++    Então a pessoa entra em "Integrantes"
++    E a contagem vira "Pedidos (0)"
++
++  @CT-175
++  Cenário: Recusar pedido
++    Quando toco em "Recusar" e confirmo
++    Então o pedido some e a pessoa não entra no ministério
++
++  @CT-176 @privacidade
++  Cenário: Dados mínimos
++    Então o e-mail do solicitante aparece parcialmente mascarado
+diff --git a/docs/casos-de-teste-holyset/gherkin/T45_projecao-adicionar-pessoas.feature b/docs/casos-de-teste-holyset/gherkin/T45_projecao-adicionar-pessoas.feature
+new file mode 100644
+index 0000000..d1a03b7
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T45_projecao-adicionar-pessoas.feature
+@@ -0,0 +1,52 @@
++# language: pt
++@projecao @equipe @convite
++Funcionalidade: Adicionar pessoas ao ministério
++
++  Contexto:
++    Dado que sou líder de "Projeção"
++    Quando toco em "Adicionar pessoas"
++
++  @CT-177
++  Cenário: Convite por código/QR
++    Então vejo o QR code e o código de 8 caracteres
++    E os botões "Copiar código", "Compartilhar" e "Copiar link"
++
++  @CT-178
++  Cenário: Copiar código
++    Quando toco em "Copiar código"
++    Então o código vai para a área de transferência e vejo "Copiado"
++
++  @CT-179
++  Cenário: Exigir aprovação
++    Dado que "Aprovar quem entrar pelo convite" está ligado
++    Quando alguém entra com o código
++    Então vira um pedido em "Pedidos"
++
++  @CT-180 @seguranca
++  Cenário: Desativar convite
++    Quando desligo "Convite ativo"
++    Então quem usar o código vê "Código inválido ou desativado."
++
++  @CT-181 @seguranca
++  Cenário: Gerar novo código invalida o anterior
++    Quando toco em "Gerar novo código"
++    Então aparece um código novo
++    E o código anterior deixa de funcionar
++
++  @CT-182 @privacidade @critico
++  Cenário: Busca de usuários sem expor a base inteira
++    Quando abro a aba "Do HolySet"
++    Então não vejo a lista de todos os usuários da plataforma
++    E só encontro uma pessoa pelo e-mail exato (ou dentro da minha igreja)
++    E os e-mails de terceiros não aparecem completos
++
++  @CT-183
++  Cenário: Adicionar usuário existente
++    Quando busco e marco um usuário
++    E escolho "Entram como: Membro"
++    E toco em "Adicionar à equipe"
++    Então ele aparece em "Integrantes"
++
++  @CT-184
++  Cenário: Botão desabilitado sem seleção
++    Então "Adicionar à equipe" fica desabilitado até eu marcar alguém
+diff --git a/docs/casos-de-teste-holyset/gherkin/T46_iluminacao-inicio-equipe.feature b/docs/casos-de-teste-holyset/gherkin/T46_iluminacao-inicio-equipe.feature
+new file mode 100644
+index 0000000..410720c
+--- /dev/null
++++ b/docs/casos-de-teste-holyset/gherkin/T46_iluminacao-inicio-equipe.feature
+@@ -0,0 +1,21 @@
++# language: pt
++@iluminacao
++Funcionalidade: Ministério de Iluminação (membro)
++
++  Contexto:
++    Dado que o ministério em uso é "Iluminação"
++
++  @CT-185
++  Cenário: Atalhos do Início
++    Quando abro "Início"
++    Então vejo "Escalas da equipe", "Equipe" e "Checklists"
++
++  @CT-186
++  Cenário: Equipe
++    Quando abro "Ministérios" > "Equipe"
++    Então vejo "Liderança · 2" e "Integrantes · 4"
++    E não vejo menus de gestão "⋮"
++
++  @CT-187 @ux
++  Cenário: Filtros de função condizentes com o ministério
++    Então os filtros mostram funções de iluminação, não instrumentos musicais
+-- 
+2.43.0
+
